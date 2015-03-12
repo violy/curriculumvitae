@@ -1,0 +1,28 @@
+{
+  "name": "cv2",
+  "version": "0.0.0",
+  "authors": [
+    "Arthur Violy <arthur@violy.net>"
+  ],
+  "description": "CV Arthur Violy",
+  "main": "cv.js",
+  "keywords": [
+    "cv"
+  ],
+  "license": "MIT",
+  "homepage": "violy.net",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "~3.3.3",
+    "jquery": "~2.1.3",
+    "underscore": "~1.8.2",
+    "jquery-mousewheel": "~3.1.12",
+    "jquery.svg": "*"
+  }
+}

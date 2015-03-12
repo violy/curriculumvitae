@@ -1,0 +1,14 @@
+### Sass template
+.sass-cache
+*.css.map
+
+
+### Yeoman template
+node_modules/
+bower_components/
+*.log
+
+build/
+dist/
+
+

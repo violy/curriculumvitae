@@ -1,0 +1,85 @@
+{
+	"curriculum": [
+		{
+			"slug": "wizzmedia",
+			"title": "Wizzmedia",
+			"subtitle": "Agence digitale",
+			"from": "2009-06",
+			"to": "2015-04",
+			"level": 0,
+			"classes": "black"
+		},
+		{
+			"slug": "esad-orleans",
+			"title": "ÉSAD Orléans",
+			"subtitle": "École Supérieure d’Art et de Design",
+			"from": "2012-10",
+			"to": "2015-04",
+			"level": -1,
+			"classes": "blue"
+		},
+		{
+			"slug": "ensadlab",
+			"title": "EnsadLab",
+			"subtitle": "École des Arts Décoratifs",
+			"from": "2009-09",
+			"to": "2012-06",
+			"level": -1,
+			"classes": "red"
+		},
+		{
+			"slug": "naturaliser-l-architecture",
+			"title": "Naturaliser l’architecture",
+			"subtitle": "Éditions HYX / Archilab / Les Turbulances / FRAC Centre",
+			"from": "2013-04",
+			"to": "2013-09",
+			"level": 1,
+			"classes": "red"
+		},
+		{
+			"slug": "typocamp",
+			"title": "Typocamp",
+			"subtitle": "Typocamp #2 hackaton",
+			"from": "2013-06",
+			"to": "2013-06",
+			"level": 2,
+			"classes": "red dot"
+		},
+		{
+			"slug": "medialab-session",
+			"title": "MediaLab Session",
+			"subtitle": "MLS Paris #1 hackaton",
+			"from": "2013-04",
+			"to": "2013-04",
+			"level": -2,
+			"classes": "red dot"
+		},
+		{
+			"slug": "mode-demo",
+			"title": "MODE : DEMO",
+			"subtitle": "LIFT10 Genève / EnsadLab",
+			"from": "2010-05",
+			"to": "2010-05",
+			"level": 1,
+			"classes": "blue dot"
+		},
+		{
+			"slug": "prism",
+			"title": "PRiSM",
+			"subtitle": "EnsadLab",
+			"from": "2012-03",
+			"to": "2012-06",
+			"level": 1,
+			"classes": "blue"
+		},
+		{
+			"slug": "ensa-nancy",
+			"title": "ENSA Nancy",
+			"subtitle": "École Nationale Supérieure d’Art de Nancy",
+			"from": "2007-10",
+			"to": "2009-06",
+			"level": 1,
+			"classes": "blue"
+		}
+	]
+}

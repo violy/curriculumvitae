@@ -1,0 +1,25 @@
+#svg{
+  display: block;
+  width:100vw;
+  height:100vh;
+  use,path{
+    fill:none;
+  }
+  path{
+    stroke-width: 2px;
+    &.red{
+      stroke:$brand-primary;
+    }
+    &.blue{
+      stroke: $brand-success;
+    }
+    &.black{
+      stroke: $brand-info;
+    }
+  }
+  #stage{
+  }
+  #center-mark{
+    fill:transparentize(#ff0,.5);
+  }
+}
