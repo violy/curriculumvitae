@@ -8620,21 +8620,34 @@ button.close {
 }
 /* line 8, ../sass/_curriculum.scss */
 #svg path {
-  stroke-width: 2px;
+  stroke-width: 5px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
-/* line 10, ../sass/_curriculum.scss */
+/* line 12, ../sass/_curriculum.scss */
 #svg path.red {
   stroke: #ff3300;
 }
-/* line 13, ../sass/_curriculum.scss */
+/* line 15, ../sass/_curriculum.scss */
 #svg path.blue {
   stroke: #3333ff;
 }
-/* line 16, ../sass/_curriculum.scss */
+/* line 18, ../sass/_curriculum.scss */
 #svg path.black {
   stroke: #000;
 }
-/* line 22, ../sass/_curriculum.scss */
+/* line 24, ../sass/_curriculum.scss */
 #svg #center-mark {
   fill: rgba(255, 255, 0, 0.5);
+}
+/* line 28, ../sass/_curriculum.scss */
+#svg #debug use {
+  fill: rgba(0, 0, 255, 0.2);
+  -webkit-transition: 0.3;
+  -o-transition: 0.3;
+  transition: 0.3;
+}
+/* line 31, ../sass/_curriculum.scss */
+#svg #debug use:hover {
+  fill: rgba(0, 0, 255, 0.7);
 }
