@@ -8616,10 +8616,11 @@ body, html {
 /* line 1, ../sass/_curriculum.scss */
 #svg {
   display: block;
+  position: absolute;
   width: 100%;
   height: 100%;
 }
-/* line 8, ../sass/_curriculum.scss */
+/* line 9, ../sass/_curriculum.scss */
 #svg path {
   stroke-width: 5px;
   stroke-linecap: round;
@@ -8628,35 +8629,35 @@ body, html {
   -o-transition: 0.3s;
   transition: 0.3s;
 }
-/* line 14, ../sass/_curriculum.scss */
+/* line 15, ../sass/_curriculum.scss */
 #svg path:hover {
   stroke-width: 10px;
 }
-/* line 19, ../sass/_curriculum.scss */
+/* line 20, ../sass/_curriculum.scss */
 #svg #items path {
   fill: none;
   mix-blend-mode: multiply;
 }
-/* line 26, ../sass/_curriculum.scss */
+/* line 27, ../sass/_curriculum.scss */
 #svg #center-mark {
   fill: rgba(255, 255, 0, 0.5);
 }
-/* line 30, ../sass/_curriculum.scss */
+/* line 31, ../sass/_curriculum.scss */
 #svg #debug use {
   fill: #000;
 }
-/* line 35, ../sass/_curriculum.scss */
+/* line 36, ../sass/_curriculum.scss */
 #svg #dates-lines use {
   fill: rgba(255, 0, 0, 0.5);
 }
-/* line 39, ../sass/_curriculum.scss */
+/* line 40, ../sass/_curriculum.scss */
 #svg #dates-lines .horizontal .year {
   -webkit-transform: translate(20px, 0);
   -ms-transform: translate(20px, 0);
   -o-transform: translate(20px, 0);
   transform: translate(20px, 0);
 }
-/* line 44, ../sass/_curriculum.scss */
+/* line 45, ../sass/_curriculum.scss */
 #svg .year {
   alignment-baseline: central;
   font-size: 28px;
