@@ -197,7 +197,7 @@ jQuery(document).ready(function($){
 	function FingerDrag(e){
 		scrollDate=Math.max(-SCROLL_BASE_OFFSET, scrollDate - e.dy / 40);
 		Update();
-		//return false;
+		return false;
 	}
 
 	$.ajax({
