@@ -6,10 +6,15 @@
     fill:none;
   }
   path{
+    //stroke:#000;
     stroke-width: 5px;
     stroke-linecap: round;
     stroke-linejoin: round;
-    &.red{
+    @include transition(.3s);
+    &:hover{
+      stroke-width: 10px;
+    }
+    /*&.red{
       stroke:$brand-primary;
     }
     &.blue{
@@ -17,7 +22,7 @@
     }
     &.black{
       stroke: $brand-info;
-    }
+    }*/
   }
   #stage{
   }
@@ -26,11 +31,18 @@
   }
   #debug{
     use{
-      fill:rgba(0,0,255,0.2);
-      @include transition(.3);
-      &:hover{
-        fill: rgba(0, 0, 255, 0.7);
-      }
+      fill: #000;
+    }
+  }
+  #dates-lines{
+    use{
+      fill: transparentize(#f00, .5);
+    }
+  }
+  line{
+    &.year{
+      stroke:#000;
+      stroke-width: 1px;
     }
   }
 }

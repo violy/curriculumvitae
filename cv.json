@@ -7,7 +7,11 @@
 			"from": "2009-06",
 			"to": "2015-04",
 			"level": 0,
-			"classes": "black"
+			"dx": 0,
+			"dy": 0,
+			"direction": -1,
+			"classes": "black",
+			"color": "#8Fc"
 		},
 		{
 			"slug": "esad-orleans",
@@ -16,7 +20,11 @@
 			"from": "2012-10",
 			"to": "2015-04",
 			"level": -1,
-			"classes": "blue"
+			"dx": 2,
+			"dy": 4,
+			"direction": 1,
+			"classes": "blue",
+			"color": "#f40"
 		},
 		{
 			"slug": "ensadlab",
@@ -25,7 +33,11 @@
 			"from": "2009-09",
 			"to": "2012-06",
 			"level": -2,
-			"classes": "red"
+			"dx": 4,
+			"dy": -2,
+			"direction": 1,
+			"classes": "red",
+			"color": "#fc6"
 		},
 		{
 			"slug": "naturaliser-l-architecture",
@@ -34,7 +46,11 @@
 			"from": "2013-04",
 			"to": "2013-09",
 			"level": 1,
-			"classes": "red"
+			"dx": -4,
+			"dy": 2,
+			"direction": 1,
+			"classes": "red",
+			"color": "#ff0"
 		},
 		{
 			"slug": "typocamp",
@@ -43,7 +59,11 @@
 			"from": "2013-06",
 			"to": "2013-06",
 			"level": 2,
-			"classes": "red dot"
+			"dx": 6,
+			"dy": -2,
+			"direction": 1,
+			"classes": "red dot",
+			"color": "#CF6"
 		},
 		{
 			"slug": "medialab-session",
@@ -52,7 +72,11 @@
 			"from": "2013-04",
 			"to": "2013-04",
 			"level": -2,
-			"classes": "red dot"
+			"dx": 4,
+			"dy": 2,
+			"direction": -1,
+			"classes": "red dot",
+			"color": "#69F"
 		},
 		{
 			"slug": "mode-demo",
@@ -61,7 +85,11 @@
 			"from": "2010-05",
 			"to": "2010-05",
 			"level": 1,
-			"classes": "blue dot"
+			"dx": -6,
+			"dy": 2,
+			"direction": 1,
+			"classes": "blue dot",
+			"color": "#269"
 		},
 		{
 			"slug": "prism",
@@ -70,7 +98,11 @@
 			"from": "2012-03",
 			"to": "2012-06",
 			"level": 1,
-			"classes": "blue"
+			"dx": 6,
+			"dy": -4,
+			"direction": -1,
+			"classes": "blue",
+			"color": "#68c"
 		},
 		{
 			"slug": "ensa-nancy",
@@ -79,7 +111,11 @@
 			"from": "2007-10",
 			"to": "2009-06",
 			"level": 1,
-			"classes": "blue"
+			"dx": 2,
+			"dy": 0,
+			"direction": 1,
+			"classes": "blue",
+			"color": "#27F"
 		}
 	]
 }

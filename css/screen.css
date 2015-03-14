@@ -8623,31 +8623,37 @@ button.close {
   stroke-width: 5px;
   stroke-linecap: round;
   stroke-linejoin: round;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  /*&.red{
+    stroke:$brand-primary;
+  }
+  &.blue{
+    stroke: $brand-success;
+  }
+  &.black{
+    stroke: $brand-info;
+  }*/
 }
-/* line 12, ../sass/_curriculum.scss */
-#svg path.red {
-  stroke: #ff3300;
+/* line 14, ../sass/_curriculum.scss */
+#svg path:hover {
+  stroke-width: 10px;
 }
-/* line 15, ../sass/_curriculum.scss */
-#svg path.blue {
-  stroke: #3333ff;
-}
-/* line 18, ../sass/_curriculum.scss */
-#svg path.black {
-  stroke: #000;
-}
-/* line 24, ../sass/_curriculum.scss */
+/* line 29, ../sass/_curriculum.scss */
 #svg #center-mark {
   fill: rgba(255, 255, 0, 0.5);
 }
-/* line 28, ../sass/_curriculum.scss */
+/* line 33, ../sass/_curriculum.scss */
 #svg #debug use {
-  fill: rgba(0, 0, 255, 0.2);
-  -webkit-transition: 0.3;
-  -o-transition: 0.3;
-  transition: 0.3;
+  fill: #000;
 }
-/* line 31, ../sass/_curriculum.scss */
-#svg #debug use:hover {
-  fill: rgba(0, 0, 255, 0.7);
+/* line 38, ../sass/_curriculum.scss */
+#svg #dates-lines use {
+  fill: rgba(255, 0, 0, 0.5);
+}
+/* line 43, ../sass/_curriculum.scss */
+#svg line.year {
+  stroke: #000;
+  stroke-width: 1px;
 }
