@@ -3,7 +3,7 @@
   width:100vw;
   height:100vh;
   use,path{
-    fill:none;
+    //fill:none;
   }
   path{
     //stroke:#000;
@@ -14,15 +14,11 @@
     &:hover{
       stroke-width: 10px;
     }
-    /*&.red{
-      stroke:$brand-primary;
+  }
+  #items{
+    path{
+      fill:none;
     }
-    &.blue{
-      stroke: $brand-success;
-    }
-    &.black{
-      stroke: $brand-info;
-    }*/
   }
   #stage{
   }
@@ -38,11 +34,17 @@
     use{
       fill: transparentize(#f00, .5);
     }
-  }
-  line{
-    &.year{
-      stroke:#000;
-      stroke-width: 1px;
+    .horizontal{
+        .year{
+          @include translate(20px,0);
+        }
     }
+  }
+  .year{
+    alignment-baseline: central;
+    font-size:28px;
+    font-weight: bold;
+    font-family: "Courier 10 Pitch", Courier, monospace;
+    text-anchor: middle;
   }
 }

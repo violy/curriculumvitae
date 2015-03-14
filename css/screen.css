@@ -8614,10 +8614,6 @@ button.close {
   width: 100vw;
   height: 100vh;
 }
-/* line 5, ../sass/_curriculum.scss */
-#svg use, #svg path {
-  fill: none;
-}
 /* line 8, ../sass/_curriculum.scss */
 #svg path {
   stroke-width: 5px;
@@ -8626,34 +8622,39 @@ button.close {
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
-  /*&.red{
-    stroke:$brand-primary;
-  }
-  &.blue{
-    stroke: $brand-success;
-  }
-  &.black{
-    stroke: $brand-info;
-  }*/
 }
 /* line 14, ../sass/_curriculum.scss */
 #svg path:hover {
   stroke-width: 10px;
 }
-/* line 29, ../sass/_curriculum.scss */
+/* line 19, ../sass/_curriculum.scss */
+#svg #items path {
+  fill: none;
+}
+/* line 25, ../sass/_curriculum.scss */
 #svg #center-mark {
   fill: rgba(255, 255, 0, 0.5);
 }
-/* line 33, ../sass/_curriculum.scss */
+/* line 29, ../sass/_curriculum.scss */
 #svg #debug use {
   fill: #000;
 }
-/* line 38, ../sass/_curriculum.scss */
+/* line 34, ../sass/_curriculum.scss */
 #svg #dates-lines use {
   fill: rgba(255, 0, 0, 0.5);
 }
+/* line 38, ../sass/_curriculum.scss */
+#svg #dates-lines .horizontal .year {
+  -webkit-transform: translate(20px, 0);
+  -ms-transform: translate(20px, 0);
+  -o-transform: translate(20px, 0);
+  transform: translate(20px, 0);
+}
 /* line 43, ../sass/_curriculum.scss */
-#svg line.year {
-  stroke: #000;
-  stroke-width: 1px;
+#svg .year {
+  alignment-baseline: central;
+  font-size: 28px;
+  font-weight: bold;
+  font-family: "Courier 10 Pitch", Courier, monospace;
+  text-anchor: middle;
 }

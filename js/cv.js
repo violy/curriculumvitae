@@ -135,26 +135,30 @@ jQuery(document).ready(function($){
 			stage.find('#items').append(path);
 		});
 
-		for(var year=0; year<10; year++){
-			var yearpx = year * YEARPX,
+		_(json.years).each(function(yearSettings,year){
+			yearSettings.dx = yearSettings.dx ? yearSettings.dx : 0;
+			yearSettings.dy = yearSettings.dy ? yearSettings.dy : 0;
+			var d = yearSettings.direction,
+				yearInt = parseInt(year),
+				yearpx = (new Date().getFullYear()- yearInt+(new Date().getMonth()+1)/12) * YEARPX,
 				yearGroup = CreateSVGElement('g',{transform:'translate(0,'+(yearpx)+')'}),
+				yearText = CreateSVGElement('text', {class: 'year '+(d<0?'left':'right'), x: d*61, y: 2, fill: '#000'});
 
-				yearText = CreateSVGElement('text', {class: 'year', x: -100, y: 0, fill: '#000'});
-			yearGroup.appendChild(
-				CreateSVGElement('line', {class: 'year', x1: -100, x2: 100, y1: 0, y2: 0})
-			);
+
+			yearGroup.appendChild(CreateSVGElement('use', {href: '#date-block',transform:'rotate('+(d*90-90)+')'}));
 			yearGroup.appendChild(
 				yearText
 			);
-			yearGroup.appendChild(DebugPoint(0,0));
-			yearGroup.year = new Date().getFullYear() - year;
+			//yearGroup.appendChild(DebugPoint(0,0));
+			yearGroup.year = year;
+			yearGroup.settings = yearSettings;
 			yearGroup.yearpx = yearpx;
 			yearText.textContent = yearGroup.year;
 
 
 			_(datesLines).push(yearGroup);
 			$('#dates-lines').append(yearGroup);
-		}
+		});
 
 		$(window).mousewheel(MouseWheel)
 		Update();
@@ -165,18 +169,19 @@ jQuery(document).ready(function($){
 			item.path.setAttributeNS(null,'d',GetPath(item));
 		});
 		_(datesLines).each(function(yearGroup,i){
-			var transform = 'translate(0,' + (yearGroup.yearpx-scrollDate) + ')',
-				d = (i % 2 == 0 ? 1 : -1),
-				diff = yearGroup.yearpx - scrollDate;
+			var diff = (yearGroup.yearpx - scrollDate) * DAYPX,
+				d = yearGroup.settings.direction,
+				dx = yearGroup.settings.dx*5,
+				dy = yearGroup.settings.dy*5,
+				transform = 'translate('+dx+','+(diff+dy)+') scale(.5)';
 
 			if(diff<-RADIUS){
-				transform = 'translate(' + (yearGroup.yearpx - scrollDate)*-d + ', 0) rotate('+90*d+')';
+				transform = 'translate('+(diff*-d+dx)+','+(dy)+') rotate('+90*d+') scale(.5)';
 			}else if(diff<RADIUS){
-				console.log(d);
 				var r = .5-Math.max(-1, diff/RADIUS)/ 2,
 					x = RADIUS*(1-Math.cos(r*PI/2)),
 					y = RADIUS *(1-Math.sin(r*PI/2));
-				transform = 'translate(' + x * d + ', '+y+') rotate(' + d*90 * r + ')';
+				transform = 'translate(' + (x*d+dx)+','+(y+dy)+') rotate(' + d*90 * r + ') scale(.5)';
 			}
 			yearGroup.setAttributeNS(null,'transform', transform);
 		})
