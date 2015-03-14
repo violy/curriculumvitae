@@ -8,6 +8,7 @@ module.exports = function (grunt) {
 					'bootstrap-sass': 'jquery',
 					'jquery.svg': ['jquery'],
 					'jquery-mousewheel': ['jquery'],
+					'jquery.finger': ['jquery'],
 					'underscore': ['jquery']
 				}
 			}

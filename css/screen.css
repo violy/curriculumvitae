@@ -8630,27 +8630,28 @@ button.close {
 /* line 19, ../sass/_curriculum.scss */
 #svg #items path {
   fill: none;
+  mix-blend-mode: multiply;
 }
-/* line 25, ../sass/_curriculum.scss */
+/* line 26, ../sass/_curriculum.scss */
 #svg #center-mark {
   fill: rgba(255, 255, 0, 0.5);
 }
-/* line 29, ../sass/_curriculum.scss */
+/* line 30, ../sass/_curriculum.scss */
 #svg #debug use {
   fill: #000;
 }
-/* line 34, ../sass/_curriculum.scss */
+/* line 35, ../sass/_curriculum.scss */
 #svg #dates-lines use {
   fill: rgba(255, 0, 0, 0.5);
 }
-/* line 38, ../sass/_curriculum.scss */
+/* line 39, ../sass/_curriculum.scss */
 #svg #dates-lines .horizontal .year {
   -webkit-transform: translate(20px, 0);
   -ms-transform: translate(20px, 0);
   -o-transform: translate(20px, 0);
   transform: translate(20px, 0);
 }
-/* line 43, ../sass/_curriculum.scss */
+/* line 44, ../sass/_curriculum.scss */
 #svg .year {
   alignment-baseline: central;
   font-size: 28px;

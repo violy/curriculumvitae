@@ -116,20 +116,33 @@
 			"direction": 1,
 			"classes": "blue",
 			"color": "#27F"
+		},
+		{
+			"slug": "esae-epinal",
+			"title": "ÉSAÉ Épinal",
+			"subtitle": "École Supérieure d’Art d’Épinal",
+			"from": "2004-09",
+			"to": "2007-10",
+			"level": 1,
+			"dx": 0,
+			"dy": -4,
+			"direction": -1,
+			"classes": "blue",
+			"color": "#f30"
 		}
 	],
 	"years": {
-		"2015": {"direction":-1,"dy":4,"dx":2},
-		"2014": {"direction":1},
-		"2013": {"direction":1},
-		"2012": {"direction":-1, "dx": 4,"dy":-2},
-		"2011": {"direction":1},
-		"2010": {"direction":1},
-		"2009": {"direction":-1,"dx":2},
-		"2008": {"direction":-1,"dx": 2},
-		"2007": {"direction":1},
-		"2006": {"direction":1},
-		"2005": {"direction":1},
-		"2004": {"direction":1}
+		"2015": {"direction": -1, "dy": 4, "dx": 2},
+		"2014": {"direction": 1},
+		"2013": {"direction": 1},
+		"2012": {"direction": -1, "dx": 4, "dy": -2},
+		"2011": {"direction": 1},
+		"2010": {"direction": 1},
+		"2009": {"direction": -1, "dx": 2},
+		"2008": {"direction": -1, "dx": 2},
+		"2007": {"direction": 1, "dy": -4},
+		"2006": {"direction": 1, "dy": -4},
+		"2005": {"direction": 1, "dy": -4},
+		"2004": {"direction": 1, "dy": -4}
 	}
 }

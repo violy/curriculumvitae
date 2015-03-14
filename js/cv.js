@@ -81,7 +81,7 @@ jQuery(document).ready(function($){
 
 		var path = "",
 			a = (item.toNowDay - scrollDate)*DAYPX,
-			d = (Math.max(50, item.durationDay))*DAYPX,
+			d = (Math.max(20, item.durationDay))*DAYPX,
 			b = a+ d,
 			aFn = CurveFn(a,true),
 			bFn = CurveFn(b),
@@ -161,6 +161,8 @@ jQuery(document).ready(function($){
 		});
 
 		$(window).mousewheel(MouseWheel)
+		$(document).on('drag',FingerDrag);
+
 		Update();
 	}
 	function Update(){
@@ -191,6 +193,11 @@ jQuery(document).ready(function($){
 		scrollDate=Math.max(-SCROLL_BASE_OFFSET, scrollDate-d/4);
 		Update();
 		return false;
+	}
+	function FingerDrag(e){
+		scrollDate=Math.max(-SCROLL_BASE_OFFSET, scrollDate - e.dy / 40);
+		Update();
+		//return false;
 	}
 
 	$.ajax({
