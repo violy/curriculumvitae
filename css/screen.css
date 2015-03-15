@@ -8700,9 +8700,10 @@ header {
   position: relative;
   z-index: 1;
   top: 20vh;
+  cursor: default;
 }
 
-/* line 10, ../sass/_header.scss */
+/* line 11, ../sass/_header.scss */
 h1 {
   margin: 0;
   font-weight: 700;
@@ -8712,12 +8713,12 @@ h1 {
   text-transform: lowercase;
 }
 
-/* line 18, ../sass/_header.scss */
+/* line 19, ../sass/_header.scss */
 .headlines {
   display: table;
   margin: auto;
 }
-/* line 21, ../sass/_header.scss */
+/* line 22, ../sass/_header.scss */
 .headlines h2 {
   font-weight: 700;
   font-size: 30px;
@@ -8729,12 +8730,12 @@ h1 {
   color: #000;
   background: #8Fc;
 }
-/* line 31, ../sass/_header.scss */
+/* line 32, ../sass/_header.scss */
 .headlines h2 + h2 {
   background: #000;
   color: #fff;
 }
-/* line 34, ../sass/_header.scss */
+/* line 35, ../sass/_header.scss */
 .headlines h2 + h2 + h2 {
   background: #f40;
   color: #fff;
