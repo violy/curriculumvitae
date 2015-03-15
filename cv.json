@@ -129,6 +129,18 @@
 			"direction": -1,
 			"classes": "blue",
 			"color": "#f30"
+		},{
+			"slug": "beaune",
+			"title": "Prépa Beaune",
+			"subtitle": "École Préparatoire aux Écoles d'Arts de Beaune",
+			"from": "2003-09",
+			"to": "2004-07",
+			"level": 1,
+			"dx": 0,
+			"dy": -4,
+			"direction": -1,
+			"classes": "blue",
+			"color": "#99d"
 		}
 	],
 	"years": {

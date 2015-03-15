@@ -142,7 +142,7 @@ jQuery(document).ready(function($){
 				yearInt = parseInt(year),
 				yearpx = (new Date().getFullYear()- yearInt+(new Date().getMonth()+1)/12) * YEARPX,
 				yearGroup = CreateSVGElement('g',{transform:'translate(0,'+(yearpx)+')'}),
-				yearText = CreateSVGElement('text', {class: 'year '+(d<0?'left':'right'), x: d*61, y: 2, fill: '#000'});
+				yearText = CreateSVGElement('text', {class: 'year '+(d<0?'left':'right'), x: d*61, y: 0, fill: '#000'});
 
 
 			yearGroup.appendChild(CreateSVGElement('use', {href: '#date-block',transform:'rotate('+(d*90-90)+')'}));

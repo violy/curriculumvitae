@@ -1778,7 +1778,7 @@ html {
 
 /* line 27, ../sass/bootstrap/_scaffolding.scss */
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Raleway", sans-serif;
   font-size: 14px;
   line-height: 1.42857;
   color: #222;
@@ -7727,7 +7727,7 @@ button.close {
   z-index: 1070;
   display: block;
   visibility: visible;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Raleway", sans-serif;
   font-size: 12px;
   font-weight: normal;
   line-height: 1.4;
@@ -7854,7 +7854,7 @@ button.close {
   display: none;
   max-width: 276px;
   padding: 1px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Raleway", sans-serif;
   font-size: 14px;
   font-weight: normal;
   line-height: 1.42857;
@@ -8617,19 +8617,15 @@ button.close {
     display: none !important;
   }
 }
-/* line 1, ../sass/_main.scss */
-body, html {
-  overflow: hidden;
-}
-
 /* line 1, ../sass/_curriculum.scss */
 #svg {
   display: block;
   position: absolute;
+  top: 0;
   width: 100%;
   height: 100%;
 }
-/* line 9, ../sass/_curriculum.scss */
+/* line 10, ../sass/_curriculum.scss */
 #svg path {
   stroke-width: 5px;
   stroke-linecap: round;
@@ -8638,39 +8634,108 @@ body, html {
   -o-transition: 0.3s;
   transition: 0.3s;
 }
-/* line 15, ../sass/_curriculum.scss */
+/* line 16, ../sass/_curriculum.scss */
 #svg path:hover {
   stroke-width: 10px;
 }
-/* line 20, ../sass/_curriculum.scss */
+/* line 21, ../sass/_curriculum.scss */
 #svg #items path {
   fill: none;
   mix-blend-mode: multiply;
 }
-/* line 27, ../sass/_curriculum.scss */
+/* line 28, ../sass/_curriculum.scss */
 #svg #center-mark {
   fill: rgba(255, 255, 0, 0.5);
 }
-/* line 31, ../sass/_curriculum.scss */
+/* line 32, ../sass/_curriculum.scss */
 #svg #debug use {
   fill: #000;
 }
-/* line 36, ../sass/_curriculum.scss */
+/* line 37, ../sass/_curriculum.scss */
 #svg #dates-lines use {
   fill: rgba(255, 0, 0, 0.5);
 }
-/* line 40, ../sass/_curriculum.scss */
+/* line 41, ../sass/_curriculum.scss */
 #svg #dates-lines .horizontal .year {
   -webkit-transform: translate(20px, 0);
   -ms-transform: translate(20px, 0);
   -o-transform: translate(20px, 0);
   transform: translate(20px, 0);
 }
-/* line 45, ../sass/_curriculum.scss */
+/* line 46, ../sass/_curriculum.scss */
 #svg .year {
-  alignment-baseline: central;
+  alignment-baseline: middle;
   font-size: 28px;
-  font-weight: bold;
-  font-family: "Courier 10 Pitch", Courier, monospace;
+  font-weight: 700;
+  font-family: "Raleway", sans-serif;
   text-anchor: middle;
+}
+
+/* line 1, ../sass/_main.scss */
+body, html {
+  overflow: hidden;
+  height: 100%;
+}
+
+/* line 5, ../sass/_main.scss */
+header {
+  width: 760px;
+  max-width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+/* line 11, ../sass/_main.scss */
+h1 {
+  font-weight: 900;
+  font-size: 200px;
+}
+
+/* line 1, ../sass/_header.scss */
+header {
+  width: 760px;
+  max-width: 100%;
+  margin: -70px auto 0;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  top: 20vh;
+}
+
+/* line 10, ../sass/_header.scss */
+h1 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 80px;
+  line-height: 1em;
+  letter-spacing: -.05em;
+  text-transform: lowercase;
+}
+
+/* line 18, ../sass/_header.scss */
+.headlines {
+  display: table;
+  margin: auto;
+}
+/* line 21, ../sass/_header.scss */
+.headlines h2 {
+  font-weight: 700;
+  font-size: 30px;
+  display: inline-block;
+  text-transform: lowercase;
+  padding: .3em .4em;
+  letter-spacing: .02em;
+  display: table-cell;
+  color: #000;
+  background: #8Fc;
+}
+/* line 31, ../sass/_header.scss */
+.headlines h2 + h2 {
+  background: #000;
+  color: #fff;
+}
+/* line 34, ../sass/_header.scss */
+.headlines h2 + h2 + h2 {
+  background: #f40;
+  color: #fff;
 }

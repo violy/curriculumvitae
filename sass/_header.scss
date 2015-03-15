@@ -1,0 +1,40 @@
+header {
+  width: 760px;
+  max-width: 100%;
+  margin: -70px auto 0;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  top:20vh;
+}
+h1 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 80px;
+  line-height: 1em;
+  letter-spacing: -.05em;
+  text-transform: lowercase;
+}
+.headlines{
+  display: table;
+  margin: auto;
+  h2 {
+    font-weight: 700;
+    font-size: 30px;
+    display: inline-block;
+    text-transform: lowercase;
+    padding: .3em .4em;
+    letter-spacing: .02em;
+    display: table-cell;
+    color: #000;
+    background: #8Fc;
+    & + h2{
+      background: #000;
+      color: #fff;
+      & + h2{
+        background: #f40;
+        color: #fff;
+      }
+    }
+  }
+}
