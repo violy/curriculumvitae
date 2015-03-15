@@ -8643,32 +8643,46 @@ button.close {
   fill: none;
   mix-blend-mode: multiply;
 }
-/* line 28, ../sass/_curriculum.scss */
-#svg #center-mark {
-  fill: rgba(255, 255, 0, 0.5);
+/* line 25, ../sass/_curriculum.scss */
+#svg #items .icon {
+  mix-blend-mode: multiply;
 }
-/* line 32, ../sass/_curriculum.scss */
+/* line 27, ../sass/_curriculum.scss */
+#svg #items .icon circle {
+  fill-opacity: .2;
+  fill: none;
+  stroke-width: 2px;
+  stroke-miterlimit: 0;
+}
+/* line 33, ../sass/_curriculum.scss */
+#svg #items .icon text {
+  cursor: default;
+  text-anchor: middle;
+  alignment-baseline: central;
+  font-family: 'FontAwesome';
+}
+/* line 40, ../sass/_curriculum.scss */
+#svg #items .icon.lightbulb-o text {
+  font-size: 1.5em;
+}
+/* line 47, ../sass/_curriculum.scss */
 #svg #debug use {
   fill: #000;
 }
-/* line 37, ../sass/_curriculum.scss */
-#svg #dates-lines use {
-  fill: rgba(255, 0, 0, 0.5);
-}
-/* line 41, ../sass/_curriculum.scss */
+/* line 53, ../sass/_curriculum.scss */
 #svg #dates-lines .horizontal .year {
   -webkit-transform: translate(20px, 0);
   -ms-transform: translate(20px, 0);
   -o-transform: translate(20px, 0);
   transform: translate(20px, 0);
 }
-/* line 46, ../sass/_curriculum.scss */
+/* line 58, ../sass/_curriculum.scss */
 #svg .year {
-  alignment-baseline: middle;
   font-size: 28px;
   font-weight: 700;
   font-family: "Raleway", sans-serif;
   text-anchor: middle;
+  alignment-baseline: middle;
 }
 
 /* line 1, ../sass/_main.scss */
@@ -8712,13 +8726,17 @@ h1 {
   letter-spacing: -.05em;
   text-transform: lowercase;
 }
+/* line 18, ../sass/_header.scss */
+h1:after {
+  font-family: 'FontAwesome';
+}
 
-/* line 19, ../sass/_header.scss */
+/* line 23, ../sass/_header.scss */
 .headlines {
   display: table;
   margin: auto;
 }
-/* line 22, ../sass/_header.scss */
+/* line 26, ../sass/_header.scss */
 .headlines h2 {
   font-weight: 700;
   font-size: 30px;
@@ -8730,12 +8748,12 @@ h1 {
   color: #000;
   background: #8Fc;
 }
-/* line 32, ../sass/_header.scss */
+/* line 36, ../sass/_header.scss */
 .headlines h2 + h2 {
   background: #000;
   color: #fff;
 }
-/* line 35, ../sass/_header.scss */
+/* line 39, ../sass/_header.scss */
 .headlines h2 + h2 + h2 {
   background: #f40;
   color: #fff;

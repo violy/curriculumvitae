@@ -15,6 +15,10 @@ h1 {
   line-height: 1em;
   letter-spacing: -.05em;
   text-transform: lowercase;
+  &:after{
+    //content:$fa-var-lightbulb-o;
+    font-family: 'FontAwesome';
+  }
 }
 .headlines{
   display: table;

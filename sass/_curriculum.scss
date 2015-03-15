@@ -22,11 +22,26 @@
       fill:none;
       mix-blend-mode:multiply;
     }
-  }
-  #stage{
-  }
-  #center-mark{
-    fill:transparentize(#ff0,.5);
+    .icon{
+      mix-blend-mode: multiply;
+      circle{
+        fill-opacity: .2;
+        fill:none;
+        stroke-width: 2px;
+        stroke-miterlimit: 0;
+      }
+      text{
+        cursor: default;
+        text-anchor: middle;
+        alignment-baseline: central;
+        font-family: 'FontAwesome';
+      }
+      &.lightbulb-o{
+        text{
+          font-size:1.5em;
+        }
+      }
+    }
   }
   #debug{
     use{
@@ -34,9 +49,6 @@
     }
   }
   #dates-lines{
-    use{
-      fill: transparentize(#f00, .5);
-    }
     .horizontal{
         .year{
           @include translate(20px,0);
@@ -44,10 +56,10 @@
     }
   }
   .year{
-    alignment-baseline: middle;
     font-size:28px;
     font-weight: 700;
     font-family: $font-family-base;
     text-anchor: middle;
+    alignment-baseline: middle;
   }
 }

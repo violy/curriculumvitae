@@ -47,45 +47,47 @@ jQuery(document).ready(function($){
 		return use;
 	}
 
-	function GetPath(item){
+	function FA(name){
+		return json.fontawesome[name];
+	}
 
-		function CurveFn(n, start) {
-			var o = {
-				x: n > 0 ? 0 : n * item.direction,
-				y: n > 0 ? n : 0,
-				absn : Math.abs(n),
-				inside : false
-			}
-			if(o.absn<RADIUS){
-				var nR = n / RADIUS;
-				o.y = (Math.cos((nR-3)*PI/4)+1)*RADIUS
-				o.x = (Math.sin((nR+1)*PI/4)-1)*RADIUS;
-				o.x*= item.direction;
-				o.inside = true;
-			}
-			if(start){
-				if(n<-RADIUS && n>-d-RADIUS){
-					o.cx = RADIUS* -item.direction
-					o.cy = 0;
-					//DebugPoint(o.cx+item.tx, item.ty);
-				}
-			}else{
-				if (n > RADIUS && n < d+RADIUS) {
-					o.cx = 0
-					o.cy = RADIUS;
-					//DebugPoint(item.tx, o.cy + item.ty);
-				}
-			}
-			return o;
+	function CurveFn(item, n, start) {
+		var o = {
+			x: n > 0 ? 0 : n * item.direction,
+			y: n > 0 ? n : 0,
+			absn: Math.abs(n),
+			inside: false
+		};
+		if (o.absn < RADIUS) {
+			var nR = n / RADIUS;
+			o.y = (Math.cos((nR - 3) * PI / 4) + 1) * RADIUS
+			o.x = (Math.sin((nR + 1) * PI / 4) - 1) * RADIUS;
+			o.x *= item.direction;
+			o.inside = true;
 		}
+		if (start) {
+			if (n < -RADIUS && n > -item.durationPx - RADIUS) {
+				o.cx = RADIUS * -item.direction
+				o.cy = 0;
+				//DebugPoint(o.cx+item.tx, item.ty);
+			}
+		} else {
+			if (n > RADIUS && n < item.durationPx + RADIUS) {
+				o.cx = 0
+				o.cy = RADIUS;
+				//DebugPoint(item.tx, o.cy + item.ty);
+			}
+		}
+		return o;
+	}
+
+	function GetPath(item){
 
 		var path = "",
 			a = (item.toNowDay - scrollDate)*DAYPX,
-			d = (Math.max(20, item.durationDay))*DAYPX,
-			b = a+ d,
-			aFn = CurveFn(a,true),
-			bFn = CurveFn(b),
-			abVect = {x:bFn.x-aFn.x,y:bFn.y-aFn.y};
+			b = a+ item.durationPx,
+			aFn = CurveFn(item, a,true),
+			bFn = CurveFn(item, b);
 
 		//DebugPoint(aFn.x+item.tx, aFn.y+item.ty);
 		//DebugPoint(bFn.x+item.tx, bFn.y+item.ty);
@@ -111,6 +113,39 @@ jQuery(document).ready(function($){
 		return path;
 	}
 
+	function UpdateItem(item) {
+		if (item.path.nodeName == 'path') {
+			item.path.setAttributeNS(null, 'd', GetPath(item));
+		} else {
+			UpdateIconItem(item);
+		}
+	}
+
+	function UpdateIconItem(item){
+		var a = (item.toNowDay - scrollDate) * DAYPX,
+			aFn = CurveFn(item, a, true);
+		item.path.setAttributeNS(null,'transform','translate('+(aFn.x+item.tx)+' '+(aFn.y+item.ty)+')');
+
+	}
+
+	function UpdateYearGroup(yearGroup){
+		var diff = (yearGroup.yearpx - scrollDate) * DAYPX,
+			d = yearGroup.settings.direction,
+			dx = yearGroup.settings.dx * 5,
+			dy = yearGroup.settings.dy * 5,
+			transform = 'translate(' + dx + ',' + (diff + dy) + ') scale(.5)';
+
+		if (diff < -RADIUS) {
+			transform = 'translate(' + (diff * -d + dx) + ',' + (dy) + ') rotate(' + 90 * d + ') scale(.5)';
+		} else if (diff < RADIUS) {
+			var r = .5 - Math.max(-1, diff / RADIUS) / 2,
+				x = RADIUS * (1 - Math.cos(r * PI / 2)),
+				y = RADIUS * (1 - Math.sin(r * PI / 2));
+			transform = 'translate(' + (x * d + dx) + ',' + (y + dy) + ') rotate(' + d * 90 * r + ') scale(.5)';
+		}
+		yearGroup.setAttributeNS(null, 'transform', transform);
+	}
+
 	function Setup(data){
 
 		json = data;
@@ -122,16 +157,32 @@ jQuery(document).ready(function($){
 			item.toNowDay = Math.floor(item.toNow/DAY_IN_MS);
 			item.duration = Math.max(0,item.toDate.getTime()-item.fromDate.getTime());
 			item.durationDay = Math.floor(item.duration/DAY_IN_MS),
+			item.durationPx = (Math.max(20, item.durationDay)) * DAYPX,
 			item.tx = item.dx * 5;
 			item.ty = item.dy * 5;
 
-			var path = item.path = CreateSVGElement('path',{
-				id:item.slug,
-				class: item.classes,
-				d: GetPath(item),
-				stroke: item.color,
-				transform: 'translate(' + item.tx + " " + item.ty + ')'
-			});
+			if(item.icon){
+				var path = item.path = CreateSVGElement('g',{class:'icon '+item.icon+' '+item.slug}),
+					text = CreateSVGElement('text',{
+						id: item.slug,
+						fill: item.color
+					}),
+					circle = CreateSVGElement('circle',{
+						r:15,
+						stroke:item.color
+					})
+					;
+				path.appendChild(circle);
+				path.appendChild(text);
+				text.textContent=FA(item.icon);
+			}else{
+				var path = item.path = CreateSVGElement('path', {
+					id: item.slug,
+					d: GetPath(item),
+					stroke: item.color,
+					transform: 'translate(' + item.tx + " " + item.ty + ')'
+				});
+			}
 			stage.find('#items').append(path);
 		});
 
@@ -167,26 +218,8 @@ jQuery(document).ready(function($){
 	}
 	function Update(){
 		ClearDebug();
-		_(json.curriculum).each(function (item,i) {
-			item.path.setAttributeNS(null,'d',GetPath(item));
-		});
-		_(datesLines).each(function(yearGroup,i){
-			var diff = (yearGroup.yearpx - scrollDate) * DAYPX,
-				d = yearGroup.settings.direction,
-				dx = yearGroup.settings.dx*5,
-				dy = yearGroup.settings.dy*5,
-				transform = 'translate('+dx+','+(diff+dy)+') scale(.5)';
-
-			if(diff<-RADIUS){
-				transform = 'translate('+(diff*-d+dx)+','+(dy)+') rotate('+90*d+') scale(.5)';
-			}else if(diff<RADIUS){
-				var r = .5-Math.max(-1, diff/RADIUS)/ 2,
-					x = RADIUS*(1-Math.cos(r*PI/2)),
-					y = RADIUS *(1-Math.sin(r*PI/2));
-				transform = 'translate(' + (x*d+dx)+','+(y+dy)+') rotate(' + d*90 * r + ') scale(.5)';
-			}
-			yearGroup.setAttributeNS(null,'transform', transform);
-		})
+		_(json.curriculum).each(UpdateItem);
+		_(datesLines).each(UpdateYearGroup);
 	}
 
 	function MouseWheel(e,dx,dy,d){
