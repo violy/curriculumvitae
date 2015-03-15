@@ -44,7 +44,7 @@
             <entry file="file://$PROJECT_DIR$/js/cv.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.36674815" vertical-offset="375" max-vertical-offset="3720">
-                  <caret line="35" column="43" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
+                  <caret line="35" column="42" selection-start-line="35" selection-start-column="38" selection-end-line="35" selection-end-column="42" />
                   <folding />
                 </state>
               </provider>
@@ -430,7 +430,13 @@
       <option name="project" value="LOCAL" />
       <updated>1426462708312</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="svgNS">
+      <created>1426462851008</created>
+      <option name="number" value="00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1426462851008</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -508,7 +514,8 @@
     <MESSAGE value="font awesome" />
     <MESSAGE value="title" />
     <MESSAGE value="colors &amp; icons" />
-    <option name="LAST_COMMIT_MESSAGE" value="colors &amp; icons" />
+    <MESSAGE value="svgNS" />
+    <option name="LAST_COMMIT_MESSAGE" value="svgNS" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -813,7 +820,7 @@
     <entry file="file://$PROJECT_DIR$/js/cv.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.36674815" vertical-offset="375" max-vertical-offset="3720">
-          <caret line="35" column="43" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
+          <caret line="35" column="42" selection-start-line="35" selection-start-column="38" selection-end-line="35" selection-end-column="42" />
           <folding />
         </state>
       </provider>
