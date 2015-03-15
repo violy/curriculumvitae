@@ -33,7 +33,7 @@ jQuery(document).ready(function($){
 					el.setAttributeNS(xlinkNS, a, v);
 					break;
 				default :
-					el.setAttributeNS(null, a, v);
+					el.setAttributeNS(svgNS, a, v);
 			}
 		});
 		return el;
