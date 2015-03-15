@@ -37,7 +37,7 @@
 			"dy": -2,
 			"direction": 1,
 
-			"color": "#fc6"
+			"color": "#fd0"
 		},
 		{
 			"slug": "naturaliser-l-architecture",
@@ -50,7 +50,7 @@
 			"dy": 8,
 			"direction": 1,
 			"icon": "star",
-			"color": "#08f"
+			"color": "#27f"
 		},
 		{
 			"slug": "naturaliser-l-architecture",
@@ -62,7 +62,7 @@
 			"dx": -2,
 			"dy": 12,
 			"direction": 1,
-			"color": "#08f"
+			"color": "#27f"
 		},
 		{
 			"slug": "typocamp",
@@ -90,7 +90,7 @@
 			"direction": -1,
 			"icon":"trophy",
 			
-			"color": "#08f"
+			"color": "#27f"
 		},
 		{
 			"slug": "mode-demo",
@@ -99,24 +99,39 @@
 			"from": "2010-05",
 			"to": "2010-05",
 			"level": 1,
-			"dx": -6,
+			"dx": 8,
 			"dy": 2,
 			"direction": 1,
+			"icon":"exchange",
 			
-			"color": "#269"
+			"color": "#fd0"
 		},
 		{
 			"slug": "prism",
 			"title": "PRiSM",
 			"subtitle": "EnsadLab",
 			"from": "2012-03",
-			"to": "2012-06",
+			"to": "2012-08",
 			"level": 1,
 			"dx": 6,
 			"dy": -4,
 			"direction": -1,
 			
-			"color": "#68c"
+			"color": "#27f"
+		},
+		{
+			"slug": "prism",
+			"title": "PRiSM",
+			"subtitle": "EnsadLab",
+			"from": "2012-03",
+			"to": "2012-04",
+			"level": 1,
+			"dx": 10,
+			"dy": -8,
+			"direction": -1,
+			"icon":"camera-retro",
+
+			"color": "#27f"
 		},
 		{
 			"slug": "ensa-nancy",
@@ -190,6 +205,8 @@
 		"paint-brush":"",
 		"trophy":"",
 		"plug":"",
-		"lightbulb-o":""
+		"lightbulb-o":"",
+		"camera-retro":"",
+		"camera":""
 	}
 }
