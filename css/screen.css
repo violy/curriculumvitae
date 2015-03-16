@@ -8655,34 +8655,29 @@ button.close {
   stroke-miterlimit: 0;
 }
 /* line 33, ../sass/_curriculum.scss */
-#svg #items .icon text {
+#svg #items .icon text, #svg #items .icon text tspan {
   cursor: default;
-  text-anchor: middle;
-  alignment-baseline: central;
-  font-family: 'FontAwesome';
 }
-/* line 40, ../sass/_curriculum.scss */
+/* line 37, ../sass/_curriculum.scss */
 #svg #items .icon.lightbulb-o text {
   font-size: 1.5em;
 }
-/* line 47, ../sass/_curriculum.scss */
+/* line 44, ../sass/_curriculum.scss */
 #svg #debug use {
   fill: #000;
 }
-/* line 53, ../sass/_curriculum.scss */
+/* line 50, ../sass/_curriculum.scss */
 #svg #dates-lines .horizontal .year {
   -webkit-transform: translate(20px, 0);
   -ms-transform: translate(20px, 0);
   -o-transform: translate(20px, 0);
   transform: translate(20px, 0);
 }
-/* line 58, ../sass/_curriculum.scss */
+/* line 55, ../sass/_curriculum.scss */
 #svg .year {
   font-size: 28px;
   font-weight: 700;
   font-family: "Raleway", sans-serif;
-  text-anchor: middle;
-  alignment-baseline: middle;
 }
 
 /* line 1, ../sass/_main.scss */

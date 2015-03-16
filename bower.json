@@ -23,8 +23,8 @@
     "bootstrap-sass": "~3.3.3",
     "underscore": "~1.8.2",
     "jquery-mousewheel": "~3.1.12",
-    "jquery.svg": "*",
     "jquery.finger": "~0.1.2",
-    "font-awesome": "~4.3.0"
+    "font-awesome": "~4.3.0",
+    "Snap.svg": "~0.3.0"
   }
 }

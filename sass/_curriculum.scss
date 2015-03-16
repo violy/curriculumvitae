@@ -30,11 +30,8 @@
         stroke-width: 2px;
         stroke-miterlimit: 0;
       }
-      text{
+      text, text tspan{
         cursor: default;
-        text-anchor: middle;
-        alignment-baseline: central;
-        font-family: 'FontAwesome';
       }
       &.lightbulb-o{
         text{
@@ -59,7 +56,7 @@
     font-size:28px;
     font-weight: 700;
     font-family: $font-family-base;
-    text-anchor: middle;
-    alignment-baseline: middle;
+    //text-anchor: middle;
+    //alignment-baseline: middle;
   }
 }

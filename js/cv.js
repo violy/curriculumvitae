@@ -13,18 +13,18 @@ jQuery(document).ready(function($){
 		YEARPX = 365*DAYPX,
 		SCROLL_BASE_OFFSET = 200/DAYPX,
 		RADIUS_QUARTER_PERIMETER = PI*RADIUS/2,
-		STAGE_WIDTH = 480
+		STAGE_WIDTH = 480,
+		DATE_WRAPPER_BG_PATH = "M100,14.5c0,1.378-1.122,2.5-2.5,2.5h-73c-1.378,0-2.5-1.122-2.5-2.5v-29c0-1.378,1.122-2.5,2.5-2.5h73 c1.378,0,2.5,1.122,2.5,2.5V14.5z",
+		DATE_WRAPPER_SHAPE_PATH = "M97.5-22h-73c-4.136,0-7.5,3.364-7.5,7.5V-4H9.163C7.619-7.53,4.1-10,0-10c-5.523,0-10,4.477-10,10s4.477,10,10,10	c4.1,0,7.619-2.47,9.163-6H17v10.5c0,4.136,3.364,7.5,7.5,7.5h73c4.136,0,7.5-3.364,7.5-7.5v-29C105-18.636,101.636-22,97.5-22zM100,14.5c0,1.378-1.122,2.5-2.5,2.5h-73c-1.378,0-2.5-1.122-2.5-2.5v-29c0-1.378,1.122-2.5,2.5-2.5h73c1.378,0,2.5,1.122,2.5,2.5V14.5z"
 		;
 
 	var scrollDate = -SCROLL_BASE_OFFSET,
 		datesLines = [],
-		defs = $('#defs'),
-		stage = $('#stage'),
-		debug = $('#debug'),
+		snap = new Snap('#svg'),
 		json;
 
 
-	function CreateSVGElement(nodeName,attributes){
+	/*function CreateSVGElement(nodeName,attributes){
 		var el = document.createElementNS(svgNS, nodeName);
 		_(attributes).each(function(v,a){
 			var ns;
@@ -37,17 +37,22 @@ jQuery(document).ready(function($){
 			}
 		});
 		return el;
-	}
-	function ClearDebug(){
-		debug.html('');
-	}
+	}*/
 	function DebugPoint(x,y){
 		var use = CreateSVGElement('use',{x:x,y:y,href:'#c'});
 		debug.append(use);
 		return use;
 	}
 
-	function FA(name){
+	function ApplyDefaults(obj,defaults){
+		_(defaults).each(function(val,key){
+			if(!obj[key]){
+				obj[key]=val;
+			}
+		})
+	}
+
+	function FontAwesome(name){
 		return json.fontawesome[name];
 	}
 
@@ -114,25 +119,26 @@ jQuery(document).ready(function($){
 	}
 
 	function UpdateItem(item) {
-		if (item.path.nodeName == 'path') {
-			item.path.setAttributeNS(null, 'd', GetPath(item));
-		} else {
+
+		if (item.icon) {
 			UpdateIconItem(item);
+		} else if(item.path) {
+			item.path.attr({d:GetPath(item)});
 		}
 	}
 
 	function UpdateIconItem(item){
 		var a = (item.toNowDay - scrollDate) * DAYPX,
 			aFn = CurveFn(item, a, true);
-		item.path.setAttributeNS(null,'transform','translate('+(aFn.x+item.tx)+' '+(aFn.y+item.ty)+')');
+		item.el.transform('translate('+(aFn.x+item.tx)+' '+(aFn.y+item.ty)+')');
 
 	}
 
-	function UpdateYearGroup(yearGroup){
-		var diff = (yearGroup.yearpx - scrollDate) * DAYPX,
-			d = yearGroup.settings.direction,
-			dx = yearGroup.settings.dx * 5,
-			dy = yearGroup.settings.dy * 5,
+	function UpdateYearGroup(year){
+		var diff = (year.yearpx - scrollDate) * DAYPX,
+			d = year.direction,
+			dx = year.dx * 5,
+			dy = year.dy * 5,
 			transform = 'translate(' + dx + ',' + (diff + dy) + ') scale(.5)';
 
 		if (diff < -RADIUS) {
@@ -143,7 +149,7 @@ jQuery(document).ready(function($){
 				y = RADIUS * (1 - Math.sin(r * PI / 2));
 			transform = 'translate(' + (x * d + dx) + ',' + (y + dy) + ') rotate(' + d * 90 * r + ') scale(.5)';
 		}
-		yearGroup.setAttributeNS(null, 'transform', transform);
+		year.el.transform(transform);
 	}
 
 	function Setup(data){
@@ -151,64 +157,65 @@ jQuery(document).ready(function($){
 		json = data;
 
 		_(data.curriculum).each(function(item,i){
-			item.fromDate = new Date(item.from);
-			item.toDate = new Date(item.to);
-			item.toNow = Math.max(0,Date.now()-item.toDate.getTime());
-			item.toNowDay = Math.floor(item.toNow/DAY_IN_MS);
-			item.duration = Math.max(0,item.toDate.getTime()-item.fromDate.getTime());
-			item.durationDay = Math.floor(item.duration/DAY_IN_MS),
-			item.durationPx = (Math.max(20, item.durationDay)) * DAYPX,
-			item.tx = item.dx * 5;
-			item.ty = item.dy * 5;
+
+			ApplyDefaults(item,{
+				fromDate : new Date(item.from),
+				toDate : new Date(item.to),
+				tx : item.dx * 5,
+				ty : item.dy * 5,
+				fontSize : 20
+			})
+			item.toNow = Math.max(0, Date.now() - item.toDate.getTime());
+			item.toNowDay = Math.floor(item.toNow / DAY_IN_MS);
+			item.duration = Math.max(0, item.toDate.getTime() - item.fromDate.getTime());
+			item.durationDay = Math.floor(item.duration / DAY_IN_MS);
+			item.durationPx = (Math.max(20, item.durationDay)) * DAYPX;
+
 
 			if(item.icon){
-				var path = item.path = CreateSVGElement('g',{class:'icon '+item.icon+' '+item.slug}),
-					text = CreateSVGElement('text',{
-						id: item.slug,
-						fill: item.color
-					}),
-					circle = CreateSVGElement('circle',{
-						r:15,
-						stroke:item.color
-					})
-					;
-				path.appendChild(circle);
-				path.appendChild(text);
-				text.textContent=FA(item.icon);
+				var circle = snap.circle(0,0,15),
+					text = snap.text(0,0, FontAwesome(item.icon)),
+					group = snap.g(circle,text).attr({class:'icon'});
+				circle.attr({fill:'none',stroke:item.color,'stroke-opacity':.5,'stroke-width':2})
+				text.attr({textpath:"M0 7.5 L15 7.5"})
+				text.attr({fill:item.color,'fill-opacity':.5,'font-size':item.fontSize,'font-family':'FontAwesome','text-anchor':'middle','alignment-baseline':'central'})
+				item.el = group;
 			}else{
-				var path = item.path = CreateSVGElement('path', {
-					id: item.slug,
-					d: GetPath(item),
-					stroke: item.color,
-					transform: 'translate(' + item.tx + " " + item.ty + ')'
-				});
+				var path = snap.path(GetPath(item)).attr({
+						fill:'none',
+						stroke:item.color
+					}),
+					group = snap.g(path).transform('translate('+item.tx+' '+item.ty+')');
+				item.el = group;
+				item.path = path;
 			}
-			stage.find('#items').append(path);
 		});
 
-		_(json.years).each(function(yearSettings,year){
-			yearSettings.dx = yearSettings.dx ? yearSettings.dx : 0;
-			yearSettings.dy = yearSettings.dy ? yearSettings.dy : 0;
-			var d = yearSettings.direction,
-				yearInt = parseInt(year),
-				yearpx = (new Date().getFullYear()- yearInt+(new Date().getMonth()+1)/12) * YEARPX,
-				yearGroup = CreateSVGElement('g',{transform:'translate(0,'+(yearpx)+')'}),
-				yearText = CreateSVGElement('text', {class: 'year '+(d<0?'left':'right'), x: d*61, y: 0, fill: '#000'});
+		var dateWrapperBg = snap.path(DATE_WRAPPER_BG_PATH),
+			dateWrapperShape = snap.path(DATE_WRAPPER_SHAPE_PATH),
+			dateWrapperGroup = snap.group(dateWrapperBg, dateWrapperShape);
+		dateWrapperBg.attr({fill:'#fff'});
+		dateWrapperGroup.attr({id:'dateWrapper'});
+		dateWrapperGroup.toDefs();
 
+		_(json.years).each(function(year,key){
 
-			yearGroup.appendChild(CreateSVGElement('use', {href: '#date-block',transform:'rotate('+(d*90-90)+')'}));
-			yearGroup.appendChild(
-				yearText
-			);
-			//yearGroup.appendChild(DebugPoint(0,0));
-			yearGroup.year = year;
-			yearGroup.settings = yearSettings;
-			yearGroup.yearpx = yearpx;
-			yearText.textContent = yearGroup.year;
+			ApplyDefaults(year,{dx:0,dy:0,d:year.direction,value:parseInt(key),iconSize:24});
+			var dateWrapperBg = snap.path(DATE_WRAPPER_BG_PATH),
+				dateWrapperShape = snap.path(DATE_WRAPPER_SHAPE_PATH),
+				dateText = snap.text(year.direction*61, 7.5, [year.value]),
+				dateWrapper = snap.group(dateWrapperBg, dateWrapperShape).transform(year.direction>0?'':'rotate(180)'),
+			dateWrapperGroup = snap.group(dateWrapper,dateText);
 
+			dateWrapper
+			//
+			dateText.attr({"text-anchor": "middle","font-size":"28px","font-weight":"700"})
+			dateWrapperBg.attr({fill: '#fff'});
+			dateWrapperGroup.attr({id: 'dateWrapper'});
 
-			_(datesLines).push(yearGroup);
-			$('#dates-lines').append(yearGroup);
+			year.el = dateWrapperGroup;
+			year.yearpx = (new Date().getFullYear() - year.value + (new Date().getMonth() + 1) / 12) * YEARPX;
+
 		});
 
 		$(window).mousewheel(MouseWheel)
@@ -217,9 +224,8 @@ jQuery(document).ready(function($){
 		Update();
 	}
 	function Update(){
-		ClearDebug();
 		_(json.curriculum).each(UpdateItem);
-		_(datesLines).each(UpdateYearGroup);
+		_(json.years).each(UpdateYearGroup);
 	}
 
 	function MouseWheel(e,dx,dy,d){
