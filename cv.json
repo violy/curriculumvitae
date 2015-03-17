@@ -85,12 +85,26 @@
 			"from": "2013-04",
 			"to": "2013-04",
 			"level": -2,
-			"dx": 4,
+			"dx": 6,
 			"dy": 4,
 			"direction": -1,
-			"icon":"trophy",
+			"icon":"flag",
 			
-			"color": "#27f"
+			"color": "#fd0"
+		},
+		{
+			"slug": "fwa-sotd",
+			"title": "FWA Site of the day",
+			"subtitle": "Light & Shadows",
+			"from": "2012-09",
+			"to": "2012-11-15",
+			"level": -2,
+			"dx": -4,
+			"dy": -4,
+			"direction": -1,
+			"icon":"trophy",
+
+			"color": "#8Fc"
 		},
 		{
 			"slug": "mode-demo",

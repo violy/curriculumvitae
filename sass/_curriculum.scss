@@ -4,6 +4,7 @@
   top:0;
   width:100%;
   height:100%;
+  background:#fff;
   use,path{
     //fill:none;
   }
@@ -17,6 +18,7 @@
       stroke-width: 10px;
     }
   }
+  /*
   #items{
     path{
       fill:none;
@@ -58,5 +60,38 @@
     font-family: $font-family-base;
     //text-anchor: middle;
     //alignment-baseline: middle;
+  }
+  */
+  #items{
+  }
+  .item{
+    mix-blend-mode: multiply;
+    path{
+      //mix-blend-mode: multiply;
+    }
+  }
+  .icon{
+    mix-blend-mode: multiply;
+    //mix-blend-mode: multiply;
+    cursor: pointer;
+  }
+  .dateGroup{
+    .dateWrapperGroup{
+      @include rotate(0deg);
+      @include transition(.5s);
+    }
+    &.horizontal{
+      .dateWrapperGroup{
+        @include rotate(90deg);
+        &.right{
+          @include rotate(-90deg);
+        }
+      }
+    }
+    .right{
+      .dateWrapper{
+        @include rotate(180deg);
+      }
+    }
   }
 }

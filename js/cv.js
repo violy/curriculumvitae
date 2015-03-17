@@ -139,22 +139,31 @@ jQuery(document).ready(function($){
 			d = year.direction,
 			dx = year.dx * 5,
 			dy = year.dy * 5,
-			transform = 'translate(' + dx + ',' + (diff + dy) + ') scale(.5)';
+			transform = 'translate(' + dx + ',' + (diff + dy) + ') ';
 
 		if (diff < -RADIUS) {
-			transform = 'translate(' + (diff * -d + dx) + ',' + (dy) + ') rotate(' + 90 * d + ') scale(.5)';
+			transform = 'translate(' + (diff * -d + dx) + ',' + (dy) + ')  scale(.5)';// rotate(' + 90 * d + ') scale(.5)';
+			//year.el.addClass('horizontal');
 		} else if (diff < RADIUS) {
 			var r = .5 - Math.max(-1, diff / RADIUS) / 2,
 				x = RADIUS * (1 - Math.cos(r * PI / 2)),
 				y = RADIUS * (1 - Math.sin(r * PI / 2));
-			transform = 'translate(' + (x * d + dx) + ',' + (y + dy) + ') rotate(' + d * 90 * r + ') scale(.5)';
+			transform = 'translate(' + (x * d + dx) + ',' + (y + dy) + ')  scale(.5)';// rotate(' + d * 90 * r + ') scale(.5)';
+			//year.el.addClass('horizontal');
+		}else{
+			//year.el.removeClass('horizontal');
 		}
+		transform += "scale(.5)";
 		year.el.transform(transform);
 	}
 
 	function Setup(data){
 
 		json = data;
+
+		//snap.rect(-1200,-600,2400,1200).attr({fill:'#fff'});
+
+		var itemsGroup = snap.group().attr({'id':'items'});
 
 		_(data.curriculum).each(function(item,i){
 
@@ -175,28 +184,23 @@ jQuery(document).ready(function($){
 			if(item.icon){
 				var circle = snap.circle(0,0,15),
 					text = snap.text(0,0, FontAwesome(item.icon)),
-					group = snap.g(circle,text).attr({class:'icon'});
-				circle.attr({fill:'none',stroke:item.color,'stroke-opacity':.5,'stroke-width':2})
+					group = snap.g(circle,text);
+				circle.attr({fill:'transparent',stroke:item.color,'stroke-opacity':.5,'stroke-width':2})
 				text.attr({textpath:"M0 7.5 L15 7.5"})
-				text.attr({fill:item.color,'fill-opacity':.5,'font-size':item.fontSize,'font-family':'FontAwesome','text-anchor':'middle','alignment-baseline':'central'})
-				item.el = group;
+				text.attr({fill:item.color,'fill-opacity':.8,'font-size':item.fontSize,'font-family':'FontAwesome','text-anchor':'middle','alignment-baseline':'central'})
+				item.el = group.attr({class: 'icon'});
 			}else{
 				var path = snap.path(GetPath(item)).attr({
 						fill:'none',
 						stroke:item.color
 					}),
 					group = snap.g(path).transform('translate('+item.tx+' '+item.ty+')');
-				item.el = group;
+				item.el = group.attr({class: 'item'});
 				item.path = path;
 			}
-		});
 
-		var dateWrapperBg = snap.path(DATE_WRAPPER_BG_PATH),
-			dateWrapperShape = snap.path(DATE_WRAPPER_SHAPE_PATH),
-			dateWrapperGroup = snap.group(dateWrapperBg, dateWrapperShape);
-		dateWrapperBg.attr({fill:'#fff'});
-		dateWrapperGroup.attr({id:'dateWrapper'});
-		dateWrapperGroup.toDefs();
+			//itemsGroup.add(item.el);
+		});
 
 		_(json.years).each(function(year,key){
 
@@ -204,16 +208,15 @@ jQuery(document).ready(function($){
 			var dateWrapperBg = snap.path(DATE_WRAPPER_BG_PATH),
 				dateWrapperShape = snap.path(DATE_WRAPPER_SHAPE_PATH),
 				dateText = snap.text(year.direction*61, 7.5, [year.value]),
-				dateWrapper = snap.group(dateWrapperBg, dateWrapperShape).transform(year.direction>0?'':'rotate(180)'),
-			dateWrapperGroup = snap.group(dateWrapper,dateText);
+				dateWrapper = snap.group(dateWrapperBg, dateWrapperShape).addClass("dateWrapper"),
+				dateWrapperGroup = snap.group(dateWrapper, dateText).addClass('dateWrapperGroup '+(year.direction > 0 ? "left" : "right")),
+				dateGroup = snap.group(dateWrapperGroup).addClass('dateGroup');
 
-			dateWrapper
 			//
 			dateText.attr({"text-anchor": "middle","font-size":"28px","font-weight":"700"})
 			dateWrapperBg.attr({fill: '#fff'});
-			dateWrapperGroup.attr({id: 'dateWrapper'});
 
-			year.el = dateWrapperGroup;
+			year.el = dateGroup;
 			year.yearpx = (new Date().getFullYear() - year.value + (new Date().getMonth() + 1) / 12) * YEARPX;
 
 		});

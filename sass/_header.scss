@@ -43,3 +43,18 @@ h1 {
     }
   }
 }
+
+@media(max-width:$screen-xs){
+  h1{
+    font-size:40px;
+  }
+  h2{
+    font-size:20px;
+  }
+  .headlines{
+    display: block;
+    h2{
+      display: none;
+    }
+  }
+}
