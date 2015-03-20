@@ -7,6 +7,31 @@ header {
   z-index: 1;
   top:20vh;
   cursor: default;
+  &.up{
+    h1 span, h2{
+      @include translate(0,-50vh);
+    }
+    h1 span{
+      @include transition-delay(.4s);
+    }
+    h1 span+span{
+      @include transition-delay(.5s);
+    }
+    .headlines{
+      h2 {
+        @include transition-delay(.8s);
+        & + h2 {
+          @include transition-delay(.7s);
+          & + h2 {
+            @include transition-delay(.6s);
+          }
+        }
+      }
+    }
+  }
+}
+h1 span,h2{
+  @include transition(1s);
 }
 h1 {
   margin: 0;
@@ -15,9 +40,18 @@ h1 {
   line-height: 1em;
   letter-spacing: -.05em;
   text-transform: lowercase;
+  span{
+    display: inline-block;
+  }
   &:after{
     //content:$fa-var-camera;
     font-family: 'FontAwesome';
+  }
+  span{
+    @include transition-delay(.4s);
+  }
+  span + span{
+    @include transition-delay(.3s);
   }
 }
 .headlines{
@@ -33,12 +67,15 @@ h1 {
     display: table-cell;
     color: #000;
     background: #8Fc;
+    @include transition-delay(0s);
     & + h2{
       background: #000;
       color: #fff;
+      @include transition-delay(.1s);
       & + h2{
         background: #f40;
         color: #fff;
+        @include transition-delay(.2s);
       }
     }
   }
@@ -46,15 +83,15 @@ h1 {
 
 @media(max-width:$screen-xs){
   h1{
-    font-size:40px;
+    font-size:12vw;
   }
   h2{
-    font-size:20px;
   }
   .headlines{
-    display: block;
+    //display: block;
     h2{
-      display: none;
+      font-size: 5vw;
+      //display: none;
     }
   }
 }

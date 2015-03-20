@@ -5,11 +5,7 @@
   width:100%;
   height:100%;
   background:#fff;
-  use,path{
-    //fill:none;
-  }
   path{
-    //stroke:#000;
     stroke-width: 5px;
     stroke-linecap: round;
     stroke-linejoin: round;
@@ -18,67 +14,25 @@
       stroke-width: 10px;
     }
   }
-  /*
-  #items{
-    path{
-      fill:none;
-      mix-blend-mode:multiply;
-    }
-    .icon{
-      mix-blend-mode: multiply;
-      circle{
-        fill-opacity: .2;
-        fill:none;
-        stroke-width: 2px;
-        stroke-miterlimit: 0;
-      }
-      text, text tspan{
-        cursor: default;
-      }
-      &.lightbulb-o{
-        text{
-          font-size:1.5em;
-        }
-      }
-    }
-  }
-  #debug{
-    use{
-      fill: #000;
-    }
-  }
-  #dates-lines{
-    .horizontal{
-        .year{
-          @include translate(20px,0);
-        }
-    }
-  }
-  .year{
-    font-size:28px;
-    font-weight: 700;
-    font-family: $font-family-base;
-    //text-anchor: middle;
-    //alignment-baseline: middle;
-  }
-  */
-  #items{
-  }
   .item{
     mix-blend-mode: multiply;
-    path{
-      //mix-blend-mode: multiply;
-    }
   }
   .icon{
     mix-blend-mode: multiply;
-    //mix-blend-mode: multiply;
     cursor: pointer;
+    circle{
+      @include transition(.3s);
+    }
+    &:hover{
+      circle{
+        @include scale(1.5);
+      }
+    }
   }
   .dateGroup{
     .dateWrapperGroup{
       @include rotate(0deg);
-      @include transition(.5s);
+      @include transition(.5s cubic-bezier(0.4, -0.5, 0.5, 1.4));
     }
     &.horizontal{
       .dateWrapperGroup{
@@ -94,4 +48,21 @@
       }
     }
   }
+}
+
+.dialog{
+  background:#000;
+  color:#fff;
+ // display: none;
+  width:400px;
+  max-width: 90%;
+  height:300px;
+  position: fixed;
+  margin: auto;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  @include box-sizing(border-box);
+  padding: 20px;
 }

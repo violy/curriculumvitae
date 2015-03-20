@@ -149,19 +149,29 @@ jQuery(document).ready(function($){
 				x = RADIUS * (1 - Math.cos(r * PI / 2)),
 				y = RADIUS * (1 - Math.sin(r * PI / 2));
 			transform = 'translate(' + (x * d + dx) + ',' + (y + dy) + ')  scale(.5)';// rotate(' + d * 90 * r + ') scale(.5)';
-			//year.el.addClass('horizontal');
+			year.el.addClass('horizontal');
 		}else{
-			//year.el.removeClass('horizontal');
+			year.el.removeClass('horizontal');
 		}
 		transform += "scale(.5)";
 		year.el.transform(transform);
 	}
 
+	function Resize(){
+		var baseVal = $('#svg').get(0).viewBox.baseVal;
+
+		if($(window).width() < 960){
+				baseVal.x = -120,
+				baseVal.width = 240;
+		}else{
+				baseVal.x = -240,
+				baseVal.width = 480;
+		}
+	}
+
 	function Setup(data){
 
 		json = data;
-
-		//snap.rect(-1200,-600,2400,1200).attr({fill:'#fff'});
 
 		var itemsGroup = snap.group().attr({'id':'items'});
 
@@ -224,7 +234,10 @@ jQuery(document).ready(function($){
 		$(window).mousewheel(MouseWheel)
 		$(document).on('drag',FingerDrag);
 
+		Resize();
+		$(window).resize(Resize);
 		Update();
+
 	}
 	function Update(){
 		_(json.curriculum).each(UpdateItem);

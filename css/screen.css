@@ -8625,52 +8625,8 @@ button.close {
   width: 100%;
   height: 100%;
   background: #fff;
-  /*
-  #items{
-    path{
-      fill:none;
-      mix-blend-mode:multiply;
-    }
-    .icon{
-      mix-blend-mode: multiply;
-      circle{
-        fill-opacity: .2;
-        fill:none;
-        stroke-width: 2px;
-        stroke-miterlimit: 0;
-      }
-      text, text tspan{
-        cursor: default;
-      }
-      &.lightbulb-o{
-        text{
-          font-size:1.5em;
-        }
-      }
-    }
-  }
-  #debug{
-    use{
-      fill: #000;
-    }
-  }
-  #dates-lines{
-    .horizontal{
-        .year{
-          @include translate(20px,0);
-        }
-    }
-  }
-  .year{
-    font-size:28px;
-    font-weight: 700;
-    font-family: $font-family-base;
-    //text-anchor: middle;
-    //alignment-baseline: middle;
-  }
-  */
 }
-/* line 11, ../sass/_curriculum.scss */
+/* line 8, ../sass/_curriculum.scss */
 #svg path {
   stroke-width: 5px;
   stroke-linecap: round;
@@ -8679,49 +8635,81 @@ button.close {
   -o-transition: 0.3s;
   transition: 0.3s;
 }
-/* line 17, ../sass/_curriculum.scss */
+/* line 13, ../sass/_curriculum.scss */
 #svg path:hover {
   stroke-width: 10px;
 }
-/* line 67, ../sass/_curriculum.scss */
+/* line 17, ../sass/_curriculum.scss */
 #svg .item {
   mix-blend-mode: multiply;
 }
-/* line 73, ../sass/_curriculum.scss */
+/* line 20, ../sass/_curriculum.scss */
 #svg .icon {
   mix-blend-mode: multiply;
   cursor: pointer;
 }
-/* line 79, ../sass/_curriculum.scss */
+/* line 23, ../sass/_curriculum.scss */
+#svg .icon circle {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+/* line 27, ../sass/_curriculum.scss */
+#svg .icon:hover circle {
+  -webkit-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  -o-transform: scale(1.5);
+  transform: scale(1.5);
+}
+/* line 33, ../sass/_curriculum.scss */
 #svg .dateGroup .dateWrapperGroup {
   -webkit-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   -o-transform: rotate(0deg);
   transform: rotate(0deg);
-  -webkit-transition: 0.5s;
-  -o-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 0.5s cubic-bezier(0.4, -0.5, 0.5, 1.4);
+  -o-transition: 0.5s cubic-bezier(0.4, -0.5, 0.5, 1.4);
+  transition: 0.5s cubic-bezier(0.4, -0.5, 0.5, 1.4);
 }
-/* line 84, ../sass/_curriculum.scss */
+/* line 38, ../sass/_curriculum.scss */
 #svg .dateGroup.horizontal .dateWrapperGroup {
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   -o-transform: rotate(90deg);
   transform: rotate(90deg);
 }
-/* line 86, ../sass/_curriculum.scss */
+/* line 40, ../sass/_curriculum.scss */
 #svg .dateGroup.horizontal .dateWrapperGroup.right {
   -webkit-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
   -o-transform: rotate(-90deg);
   transform: rotate(-90deg);
 }
-/* line 92, ../sass/_curriculum.scss */
+/* line 46, ../sass/_curriculum.scss */
 #svg .dateGroup .right .dateWrapper {
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   -o-transform: rotate(180deg);
   transform: rotate(180deg);
+}
+
+/* line 53, ../sass/_curriculum.scss */
+.dialog {
+  background: #000;
+  color: #fff;
+  width: 400px;
+  max-width: 90%;
+  height: 300px;
+  position: fixed;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 20px;
 }
 
 /* line 1, ../sass/_main.scss */
@@ -8755,8 +8743,47 @@ header {
   top: 20vh;
   cursor: default;
 }
-
 /* line 11, ../sass/_header.scss */
+header.up h1 span, header.up h2 {
+  -webkit-transform: translate(0, -50vh);
+  -ms-transform: translate(0, -50vh);
+  -o-transform: translate(0, -50vh);
+  transform: translate(0, -50vh);
+}
+/* line 14, ../sass/_header.scss */
+header.up h1 span {
+  -webkit-transition-delay: 0.4s;
+  transition-delay: 0.4s;
+}
+/* line 17, ../sass/_header.scss */
+header.up h1 span + span {
+  -webkit-transition-delay: 0.5s;
+  transition-delay: 0.5s;
+}
+/* line 21, ../sass/_header.scss */
+header.up .headlines h2 {
+  -webkit-transition-delay: 0.8s;
+  transition-delay: 0.8s;
+}
+/* line 23, ../sass/_header.scss */
+header.up .headlines h2 + h2 {
+  -webkit-transition-delay: 0.7s;
+  transition-delay: 0.7s;
+}
+/* line 25, ../sass/_header.scss */
+header.up .headlines h2 + h2 + h2 {
+  -webkit-transition-delay: 0.6s;
+  transition-delay: 0.6s;
+}
+
+/* line 33, ../sass/_header.scss */
+h1 span, h2 {
+  -webkit-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+}
+
+/* line 36, ../sass/_header.scss */
 h1 {
   margin: 0;
   font-weight: 700;
@@ -8765,17 +8792,31 @@ h1 {
   letter-spacing: -.05em;
   text-transform: lowercase;
 }
-/* line 18, ../sass/_header.scss */
+/* line 43, ../sass/_header.scss */
+h1 span {
+  display: inline-block;
+}
+/* line 46, ../sass/_header.scss */
 h1:after {
   font-family: 'FontAwesome';
 }
+/* line 50, ../sass/_header.scss */
+h1 span {
+  -webkit-transition-delay: 0.4s;
+  transition-delay: 0.4s;
+}
+/* line 53, ../sass/_header.scss */
+h1 span + span {
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+}
 
-/* line 23, ../sass/_header.scss */
+/* line 57, ../sass/_header.scss */
 .headlines {
   display: table;
   margin: auto;
 }
-/* line 26, ../sass/_header.scss */
+/* line 60, ../sass/_header.scss */
 .headlines h2 {
   font-weight: 700;
   font-size: 30px;
@@ -8786,35 +8827,32 @@ h1:after {
   display: table-cell;
   color: #000;
   background: #8Fc;
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
 }
-/* line 36, ../sass/_header.scss */
+/* line 71, ../sass/_header.scss */
 .headlines h2 + h2 {
   background: #000;
   color: #fff;
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
 }
-/* line 39, ../sass/_header.scss */
+/* line 75, ../sass/_header.scss */
 .headlines h2 + h2 + h2 {
   background: #f40;
   color: #fff;
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
 }
 
 @media (max-width: 480px) {
-  /* line 48, ../sass/_header.scss */
+  /* line 85, ../sass/_header.scss */
   h1 {
-    font-size: 40px;
+    font-size: 12vw;
   }
 
-  /* line 51, ../sass/_header.scss */
-  h2 {
-    font-size: 20px;
-  }
-
-  /* line 54, ../sass/_header.scss */
-  .headlines {
-    display: block;
-  }
-  /* line 56, ../sass/_header.scss */
+  /* line 92, ../sass/_header.scss */
   .headlines h2 {
-    display: none;
+    font-size: 5vw;
   }
 }
