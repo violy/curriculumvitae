@@ -3,15 +3,6 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-/* FONT PATH
- * -------------------------- */
-@font-face {
-  font-family: 'FontAwesome';
-  src: url("../fonts/fontawesome-webfont.eot?v=4.3.0");
-  src: url("../fonts/fontawesome-webfont.eot?#iefix&v=4.3.0") format("embedded-opentype"), url("../fonts/fontawesome-webfont.woff2?v=4.3.0") format("woff2"), url("../fonts/fontawesome-webfont.woff?v=4.3.0") format("woff"), url("../fonts/fontawesome-webfont.ttf?v=4.3.0") format("truetype"), url("../fonts/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
 /* line 5, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -8617,6 +8608,13 @@ button.close {
     display: none !important;
   }
 }
+@font-face {
+  font-family: 'cv';
+  src: url("../fonts/cv.eot?-shwtks");
+  src: url("../fonts/cv.eot?#iefix-shwtks") format("embedded-opentype"), url("../fonts/cv.woff?-shwtks") format("woff"), url("../fonts/cv.ttf?-shwtks") format("truetype"), url("../fonts/cv.svg?-shwtks#cv") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
 /* line 1, ../sass/_curriculum.scss */
 #svg {
   display: block;
@@ -8697,6 +8695,7 @@ button.close {
 .dialog {
   background: #000;
   color: #fff;
+  display: none;
   width: 400px;
   max-width: 90%;
   height: 300px;

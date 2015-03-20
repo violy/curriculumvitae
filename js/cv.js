@@ -24,24 +24,8 @@ jQuery(document).ready(function($){
 		json;
 
 
-	/*function CreateSVGElement(nodeName,attributes){
-		var el = document.createElementNS(svgNS, nodeName);
-		_(attributes).each(function(v,a){
-			var ns;
-			switch(a){
-				case 'href':
-					el.setAttributeNS(xlinkNS, a, v);
-					break;
-				default :
-					el.setAttributeNS(null, a, v);
-			}
-		});
-		return el;
-	}*/
-	function DebugPoint(x,y){
-		var use = CreateSVGElement('use',{x:x,y:y,href:'#c'});
-		debug.append(use);
-		return use;
+	function DisplayDialog(icon){
+		console.log(icon);
 	}
 
 	function ApplyDefaults(obj,defaults){
@@ -52,8 +36,13 @@ jQuery(document).ready(function($){
 		})
 	}
 
-	function FontAwesome(name){
-		return json.fontawesome[name];
+	function Icon(name){
+		var o = {
+			dy: json.icons[name].dy,
+			code: String.fromCharCode(parseInt(json.icons[name].code, 16))
+		}
+		console.log(name,o);
+		return o;
 	}
 
 	function CurveFn(item, n, start) {
@@ -193,11 +182,12 @@ jQuery(document).ready(function($){
 
 			if(item.icon){
 				var circle = snap.circle(0,0,15),
-					text = snap.text(0,0, FontAwesome(item.icon)),
+					icon = Icon(item.icon),
+					text = snap.text(0, 0, icon.code),
 					group = snap.g(circle,text);
 				circle.attr({fill:'transparent',stroke:item.color,'stroke-opacity':.5,'stroke-width':2})
-				text.attr({textpath:"M0 7.5 L15 7.5"})
-				text.attr({fill:item.color,'fill-opacity':.8,'font-size':item.fontSize,'font-family':'FontAwesome','text-anchor':'middle','alignment-baseline':'central'})
+				text.attr({textpath:"M0 "+(7.5+icon.dy)+" L15 "+(7.5+icon.dy)})
+				text.attr({fill:item.color,'fill-opacity':.8,'font-size':item.fontSize,'font-family':'cv','text-anchor':'middle','alignment-baseline':'central'})
 				item.el = group.attr({class: 'icon'});
 			}else{
 				var path = snap.path(GetPath(item)).attr({
@@ -209,7 +199,10 @@ jQuery(document).ready(function($){
 				item.path = path;
 			}
 
-			//itemsGroup.add(item.el);
+			item.el.click(function(){
+				DisplayDialog(item);
+			});
+
 		});
 
 		_(json.years).each(function(year,key){
