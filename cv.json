@@ -10,7 +10,7 @@
 			"dx": 0,
 			"dy": 0,
 			"direction": -1,
-			
+			"boxIcon": "star",
 			"color": "#8Fc"
 		},
 		{
@@ -23,7 +23,8 @@
 			"dx": 2,
 			"dy": 4,
 			"direction": 1,
-			
+			"boxIcon": "dialog",
+
 			"color": "#f40"
 		},
 		{
@@ -36,6 +37,7 @@
 			"dx": 4,
 			"dy": -2,
 			"direction": 1,
+			"boxIcon": "cellphone",
 
 			"color": "#fd0"
 		},
@@ -50,6 +52,7 @@
 			"dy": 8,
 			"direction": 1,
 			"icon": "star",
+			"boxIcon": "star",
 			"color": "#27f"
 		},
 		{
@@ -62,6 +65,8 @@
 			"dx": -2,
 			"dy": 12,
 			"direction": 1,
+			"boxIcon": "star",
+
 			"color": "#27f"
 		},
 		{
@@ -75,7 +80,8 @@
 			"dy": 0,
 			"direction": 1,
 			"icon": "light",
-			
+			"boxIcon": "light",
+
 			"color": "#f30"
 		},
 		{
@@ -89,7 +95,8 @@
 			"dy": 4,
 			"direction": -1,
 			"icon":"lightning",
-			
+			"boxIcon": "lightning",
+
 			"color": "#fd0"
 		},
 		{
@@ -103,6 +110,7 @@
 			"dy": -4,
 			"direction": -1,
 			"icon":"trophy",
+			"boxIcon": "trophy",
 
 			"color": "#8Fc"
 		},
@@ -117,7 +125,8 @@
 			"dy": 2,
 			"direction": 1,
 			"icon":"dialog",
-			
+			"boxIcon": "dialog",
+
 			"color": "#fd0"
 		},
 		{
@@ -130,7 +139,8 @@
 			"dx": 6,
 			"dy": -4,
 			"direction": -1,
-			
+			"boxIcon": "star",
+
 			"color": "#27f"
 		},
 		{
@@ -144,6 +154,7 @@
 			"dy": -8,
 			"direction": -1,
 			"icon":"photo",
+			"boxIcon":"photo",
 
 			"color": "#27f"
 		},
@@ -157,7 +168,8 @@
 			"dx": 2,
 			"dy": 0,
 			"direction": 1,
-			
+			"boxIcon": "star",
+
 			"color": "#27F"
 		},
 		{
@@ -170,7 +182,8 @@
 			"dx": 0,
 			"dy": -4,
 			"direction": -1,
-			
+			"boxIcon": "star",
+
 			"color": "#f30"
 		},{
 			"slug": "beaune",
@@ -182,7 +195,8 @@
 			"dx": 0,
 			"dy": -4,
 			"direction": -1,
-			
+			"boxIcon": "star",
+
 			"color": "#99d"
 		}
 	],

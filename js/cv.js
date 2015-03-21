@@ -24,8 +24,19 @@ jQuery(document).ready(function($){
 		json;
 
 
-	function DisplayDialog(icon){
-		console.log(icon);
+	function DisplayDialog(item){
+		var handler = $(_.template('<div class="dialog-handler"><div class="dialog" style="background: <%= color %>"><h2><%= title %><i class="icon-cv icon-<%= boxIcon %>"></i></h2><h3><%= subtitle %></h3><div class="description" style="color:<%= color %>;"><%= subtitle+" "+title %></div></div></div>')(item));
+		var dialog = handler.find('.dialog');
+		handler.click(function(){
+			handler.addClass('fadeout');
+			$('header').removeClass('up');
+			setTimeout(function(){
+				handler.remove();
+			},2000);
+		});
+		$('header').addClass('up');
+		$('body').append(handler);
+		dialog.css({marginTop: -dialog.height() / 2})
 	}
 
 	function ApplyDefaults(obj,defaults){
@@ -224,7 +235,7 @@ jQuery(document).ready(function($){
 
 		});
 
-		$(window).mousewheel(MouseWheel)
+		$('#svg').mousewheel(MouseWheel)
 		$(document).on('drag',FingerDrag);
 
 		Resize();

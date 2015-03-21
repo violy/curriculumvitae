@@ -8615,6 +8615,106 @@ button.close {
   font-weight: normal;
   font-style: normal;
 }
+/* line 12, ../sass/_fonts.scss */
+.icon-cv {
+  font-family: 'cv';
+}
+
+/* line 16, ../sass/_fonts.scss */
+.icon-cafe:before {
+  content: "\e600";
+}
+
+/* line 20, ../sass/_fonts.scss */
+.icon-cellphone:before {
+  content: "\e601";
+}
+
+/* line 24, ../sass/_fonts.scss */
+.icon-check:before {
+  content: "\e602";
+}
+
+/* line 28, ../sass/_fonts.scss */
+.icon-compass:before {
+  content: "\e603";
+}
+
+/* line 32, ../sass/_fonts.scss */
+.icon-computer:before {
+  content: "\e604";
+}
+
+/* line 36, ../sass/_fonts.scss */
+.icon-config:before {
+  content: "\e605";
+}
+
+/* line 40, ../sass/_fonts.scss */
+.icon-dialog:before {
+  content: "\e606";
+}
+
+/* line 44, ../sass/_fonts.scss */
+.icon-eye:before {
+  content: "\e607";
+}
+
+/* line 48, ../sass/_fonts.scss */
+.icon-heart:before {
+  content: "\e608";
+}
+
+/* line 52, ../sass/_fonts.scss */
+.icon-light:before {
+  content: "\e609";
+}
+
+/* line 56, ../sass/_fonts.scss */
+.icon-lightning:before {
+  content: "\e60a";
+}
+
+/* line 60, ../sass/_fonts.scss */
+.icon-pen:before {
+  content: "\e60b";
+}
+
+/* line 64, ../sass/_fonts.scss */
+.icon-photo:before {
+  content: "\e60c";
+}
+
+/* line 68, ../sass/_fonts.scss */
+.icon-puzzle:before {
+  content: "\e60d";
+}
+
+/* line 72, ../sass/_fonts.scss */
+.icon-settings:before {
+  content: "\e60e";
+}
+
+/* line 76, ../sass/_fonts.scss */
+.icon-star:before {
+  content: "\e60f";
+}
+
+/* line 80, ../sass/_fonts.scss */
+.icon-trophy:before {
+  content: "\e610";
+}
+
+/* line 84, ../sass/_fonts.scss */
+.icon-window:before {
+  content: "\e611";
+}
+
+/* line 88, ../sass/_fonts.scss */
+.icon-zoom:before {
+  content: "\e612";
+}
+
 /* line 1, ../sass/_curriculum.scss */
 #svg {
   display: block;
@@ -8691,24 +8791,219 @@ button.close {
   transform: rotate(180deg);
 }
 
-/* line 53, ../sass/_curriculum.scss */
+@-moz-keyframes dialogHandlerFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes dialogHandlerFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes dialogHandlerFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes dialogHandlerFadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes dialogHandlerFadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes dialogHandlerFadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-moz-keyframes dialogFadeOut {
+  0% {
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  100% {
+    -webkit-transform: translate(0, -100vh);
+    -ms-transform: translate(0, -100vh);
+    -o-transform: translate(0, -100vh);
+    transform: translate(0, -100vh);
+    opacity: 0;
+  }
+}
+@-webkit-keyframes dialogFadeOut {
+  0% {
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  100% {
+    -webkit-transform: translate(0, -100vh);
+    -ms-transform: translate(0, -100vh);
+    -o-transform: translate(0, -100vh);
+    transform: translate(0, -100vh);
+    opacity: 0;
+  }
+}
+@keyframes dialogFadeOut {
+  0% {
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  100% {
+    -webkit-transform: translate(0, -100vh);
+    -ms-transform: translate(0, -100vh);
+    -o-transform: translate(0, -100vh);
+    transform: translate(0, -100vh);
+    opacity: 0;
+  }
+}
+@-moz-keyframes dialogFadeIn {
+  0% {
+    -webkit-transform: translate(0, 50vh);
+    -ms-transform: translate(0, 50vh);
+    -o-transform: translate(0, 50vh);
+    transform: translate(0, 50vh);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes dialogFadeIn {
+  0% {
+    -webkit-transform: translate(0, 50vh);
+    -ms-transform: translate(0, 50vh);
+    -o-transform: translate(0, 50vh);
+    transform: translate(0, 50vh);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+@keyframes dialogFadeIn {
+  0% {
+    -webkit-transform: translate(0, 50vh);
+    -ms-transform: translate(0, 50vh);
+    -o-transform: translate(0, 50vh);
+    transform: translate(0, 50vh);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+/* line 80, ../sass/_curriculum.scss */
+.dialog-handler {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  background: rgba(255, 255, 255, 0.5);
+  -webkit-animation: dialogHandlerFadeIn 1s both;
+  -o-animation: dialogHandlerFadeIn 1s both;
+  animation: dialogHandlerFadeIn 1s both;
+}
+/* line 89, ../sass/_curriculum.scss */
+.dialog-handler.fadeout {
+  -webkit-animation: dialogHandlerFadeOut 1s 1s both;
+  -o-animation: dialogHandlerFadeOut 1s 1s both;
+  animation: dialogHandlerFadeOut 1s 1s both;
+}
+
+/* line 93, ../sass/_curriculum.scss */
 .dialog {
   background: #000;
   color: #fff;
-  display: none;
-  width: 400px;
-  max-width: 90%;
-  height: 300px;
-  position: fixed;
+  width: 600px;
+  height: auto;
   margin: auto;
-  top: 0;
+  position: absolute;
   left: 0;
   right: 0;
-  bottom: 0;
+  top: 25vh;
+  -webkit-animation: dialogFadeIn 1s 1s both;
+  -o-animation: dialogFadeIn 1s 1s both;
+  animation: dialogFadeIn 1s 1s both;
+}
+/* line 104, ../sass/_curriculum.scss */
+.fadeout .dialog {
+  -webkit-animation: dialogFadeOut 1s both;
+  -o-animation: dialogFadeOut 1s both;
+  animation: dialogFadeOut 1s both;
+}
+/* line 108, ../sass/_curriculum.scss */
+.dialog h2, .dialog h3, .dialog .description {
+  margin: 0;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  padding: 20px;
+  padding: 5px 20px;
+}
+/* line 113, ../sass/_curriculum.scss */
+.dialog h2, .dialog h3 {
+  border-bottom: none;
+}
+/* line 116, ../sass/_curriculum.scss */
+.dialog h2 {
+  background: rgba(0, 0, 0, 0.2);
+}
+/* line 119, ../sass/_curriculum.scss */
+.dialog h3 {
+  border-top: none;
+  background: rgba(0, 0, 0, 0.1);
+  font-size: 12px;
+}
+/* line 124, ../sass/_curriculum.scss */
+.dialog .description {
+  border-top: none;
+  background: rgba(255, 255, 255, 0.8);
+}
+/* line 128, ../sass/_curriculum.scss */
+.dialog .icon-cv {
+  float: right;
+  margin: 0 -10px;
 }
 
 /* line 1, ../sass/_main.scss */

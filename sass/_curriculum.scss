@@ -50,19 +50,83 @@
   }
 }
 
+@include keyframes('dialogHandlerFadeIn'){
+  0%{ opacity: 0; }
+  100%{ opacity: 1; }
+}
+
+@include keyframes('dialogHandlerFadeOut') {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@include keyframes('dialogFadeOut'){
+  0% {
+    @include translate(0, 0);
+  }
+  100% {
+    @include translate(0,-100vh); opacity: 0;
+  }
+}
+@include keyframes('dialogFadeIn'){
+  0%{ @include translate(0,50vh); opacity: 0 }
+  100%{ @include translate(0,0); opacity: 1 }
+}
+
+.dialog-handler{
+  position: fixed;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  z-index: 3;
+  background: transparentize(#fff,.5);
+  @include animation(dialogHandlerFadeIn 1s both);
+  &.fadeout{
+    @include animation(dialogHandlerFadeOut 1s 1s both);
+  }
+}
 .dialog{
   background:#000;
   color:#fff;
-  display: none;
-  width:400px;
-  max-width: 90%;
-  height:300px;
-  position: fixed;
+  width:600px;
+  height:auto;
   margin: auto;
-  top:0;
+  position: absolute;
   left:0;
   right:0;
-  bottom:0;
-  @include box-sizing(border-box);
-  padding: 20px;
+  top:25vh;
+  @include animation(dialogFadeIn 1s 1s both);
+  .fadeout &{
+    @include animation(dialogFadeOut 1s both);
+
+  }
+  h2,h3,.description{
+    margin: 0;
+    @include box-sizing(border-box);
+    padding: 5px 20px;
+  }
+  h2,h3{
+    border-bottom: none;
+  }
+  h2{
+    background: transparentize(#000, 0.8);
+  }
+  h3{
+    border-top: none;
+    background: transparentize(#000, 0.9);
+    font-size:12px;
+  }
+  .description{
+    border-top: none;
+    background: transparentize(#fff,0.2);
+  }
+  .icon-cv{
+    float:right;
+    margin: 0 -10px;
+  }
 }
