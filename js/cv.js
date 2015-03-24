@@ -174,7 +174,7 @@ jQuery(document).ready(function($){
 
 		json = data;
 
-		var itemsGroup = snap.group().attr({'id':'items'});
+		var itemsGroup = snap.group().attr({'id':'items'}), htmlExport ='';
 
 		_(data.curriculum).each(function(item,i){
 
@@ -217,12 +217,19 @@ jQuery(document).ready(function($){
 				item.path = path;
 			}
 
+			if(!item.alias){
+				var tpl = "<article><h2><%= title %></h2><h3><%= subtitle %></h3><div><%= description %></div><time datetime='<%= to %>'><%= toDate %></time></article>";
+				htmlExport += _.template(tpl)(item);
+			}
+
 
 			item.el.click(function(){
 				DisplayDialog(item);
 			});
 
 		});
+		// TODO : dirty export, should be automated
+		// console.log(htmlExport)
 
 		_(json.years).each(function(year,key){
 
