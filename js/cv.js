@@ -217,6 +217,7 @@ jQuery(document).ready(function($){
 				item.path = path;
 			}
 
+
 			item.el.click(function(){
 				DisplayDialog(item);
 			});

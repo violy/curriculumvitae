@@ -12,3 +12,9 @@ h1{
   font-weight: 900;
   font-size:200px;
 }
+img#panpan{
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  @include scale(.1);
+}
