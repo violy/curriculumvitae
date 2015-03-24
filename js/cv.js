@@ -42,7 +42,7 @@ jQuery(document).ready(function($){
 	function ApplyDefaults(obj,defaults){
 		var ignore = /(el)|(path)/
 		_(defaults).each(function(val,key){
-			if(key.match(ignore)){console.log(key);return}
+			if(key.match(ignore)){return}
 			if(!obj[key]){
 				obj[key]=val;
 			}
@@ -190,7 +190,6 @@ jQuery(document).ready(function($){
 				ty : item.dy * 5,
 				fontSize : 20
 			})
-			console.log(item.slug, item.tx, item.ty, item);
 			item.toNow = Math.max(0, Date.now() - item.toDate.getTime());
 			item.toNowDay = Math.floor(item.toNow / DAY_IN_MS);
 			item.duration = Math.max(0, item.toDate.getTime() - item.fromDate.getTime());
