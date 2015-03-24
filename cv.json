@@ -30,7 +30,7 @@
 			"slug": "ensadlab",
 			"title": "EnsadLab",
 			"subtitle": "École des Arts Décoratifs",
-			"description": "Trois années aux Arts déco, dans un « laboratoire de <strong>recherche</strong> » mon fait découvrir une chose essentielle : la <strong>mobilité</strong> est au cœur de ma démarche. C’est autour de la découverte d’appareils nouveaux que furent l’iPhone et l’iPad que — collectivement et sous la direction de <strong>Jean-Louis Boissier</strong> — nous avons dévellopé nos recherches théoriques et pratiques, en <strong>Media design</strong> & <strong>Media art</strong>. ",
+			"description": "Trois années aux Arts déco, dans un « laboratoire de <strong>recherche</strong> » mon permis de découvrir une chose essentielle : la <strong>mobilité</strong> est au cœur de ma démarche. C’est autour de la découverte d’appareils nouveaux que furent l’iPhone et l’iPad que — collectivement et sous la direction de <strong>Jean-Louis Boissier</strong> — nous avons dévellopé nos recherches théoriques et pratiques, en <strong>Media design</strong> & <strong>Media art</strong>. ",
 			"from": "2009-09",
 			"to": "2012-06",
 			"dx": 4,
@@ -43,7 +43,7 @@
 			"slug": "naturaliser-l-architecture",
 			"title": "Naturaliser l’architecture",
 			"subtitle": "Éditions HYX / Archilab / Les Turbulances / FRAC Centre",
-			"description": "",
+			"description": "En équipe avec Caroline Kassimo-Zahnd et à l’invitation d’Emmanuel Cyriaque, responsable des éditions HYX, a été édité le catalogue de l’exposition Archilab, qui avait pour titre naturaliser l’architecture. L’objectif était de traiter les titrages en <strong>typographies générative</strong>. Nous avons inventés, dessinés, et programmés ces caractères, en prenant inspiration sur des formes végétales.",
 			"from": "2013-04",
 			"to": "2013-09",
 			"dx": -2,
@@ -62,7 +62,7 @@
 			"slug": "typocamp",
 			"title": "Typocamp",
 			"subtitle": "Typocamp #2 hackaton",
-			"description": "",
+			"description": "à ICI Montreuil pour la deuxième édition de Typocamp, un évènement dédié à la typographie et au numérique. Un hackaton pour croiser du monde et des idées autour de la création typographique",
 			"from": "2013-06",
 			"to": "2013-06",
 			"dx": 6,
@@ -76,26 +76,23 @@
 			"slug": "medialab-session",
 			"title": "MediaLab Session",
 			"subtitle": "MLS Paris #1 hackaton",
-			"description": "",
+			"description": "La MediaLab Session Paris a été un week-end incroyable, un hackaton dédié à l’innovation dans les nouveaux médias. Il l’a aussi été parce notre projet d’équipe a gagné le concours de pitch !",
 			"from": "2013-04",
 			"to": "2013-04",
-			
 			"dx": 6,
 			"dy": 4,
 			"direction": -1,
 			"icon":"lightning",
 			"boxIcon": "lightning",
-
 			"color": "#fd0"
 		},
 		{
 			"slug": "fwa-sotd",
 			"title": "FWA Site of the day",
 			"subtitle": "Light & Shadows",
-			"description": "",
+			"description": "Ce site a été ma premiere approche des nouvelles technologies HTML5/CSS3/JS dans un cadre professionelle. L’audiance devenait mature pour ces technologies. Le projet fut conclue par un award, <strong>Site Of The Day</strong> aux prestigieux FWA.",
 			"from": "2012-09",
 			"to": "2012-11-15",
-			
 			"dx": -4,
 			"dy": -4,
 			"direction": -1,
@@ -108,10 +105,9 @@
 			"slug": "mode-demo",
 			"title": "MODE : DEMO",
 			"subtitle": "LIFT10 Genève / EnsadLab",
-			"description": "",
+			"description": "<iframe src='https://player.vimeo.com/video/13325895' width='250' height='162' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>Une exposition d’EnsadLab organisé par la Head Genève dans le cadre des conférences Lift10. Nous avons exposé les productions et prototypes, le logiciel <strong>Mobilizing</strong> que nous avons dévellopé dans notre groupe de recherche ",
 			"from": "2010-05",
 			"to": "2010-05",
-			
 			"dx": 8,
 			"dy": 2,
 			"direction": 1,
@@ -124,53 +120,39 @@
 			"slug": "prism",
 			"title": "PRiSM",
 			"subtitle": "EnsadLab",
-			"description": "",
+			"description": "Prism est un prototype expérimental pour montrer des images lenticulaires sur des terminaux mobiles. Concretement, un cliché est pris sous une vingtaine d’angles différents et le mouvement du poignet, capté par le gyroscope de l'appareil permet d'afficher différents photogrammes",
 			"from": "2012-03",
 			"to": "2012-08",
-			
 			"dx": 6,
 			"dy": -4,
 			"direction": -1,
-			"boxIcon": "star",
-
+			"boxIcon": "photo",
 			"color": "#27f"
 		},
 		{
-			"slug": "prism",
-			"title": "PRiSM",
-			"subtitle": "EnsadLab",
-			"description": "",
-			"from": "2012-03",
-			"to": "2012-04",
-			
+			"alias": "prism",
 			"dx": 10,
 			"dy": -8,
-			"direction": -1,
-			"icon":"photo",
-			"boxIcon":"photo",
-
-			"color": "#27f"
+			"icon":"photo"
 		},
 		{
 			"slug": "ensa-nancy",
 			"title": "ENSA Nancy",
 			"subtitle": "École Nationale Supérieure d’Art de Nancy",
-			"description": "",
+			"description": "L’école où j’ai été <strong>maquetté</strong> par Susanna Shannon. J’ai signé mon DNSEP option communication après deux années d’expérimentations et de grandes ouvertures (scénographie, architecture, chorégraphie, cinéma.) J’ai pu aller à l’encontre de mes prédispositions techniques — une vraie chance. Je me suis dé-programmé. ",
 			"from": "2007-10",
 			"to": "2009-06",
-			
 			"dx": 2,
 			"dy": 0,
 			"direction": 1,
 			"boxIcon": "star",
-
 			"color": "#27F"
 		},
 		{
 			"slug": "esae-epinal",
 			"title": "ÉSAÉ Épinal",
 			"subtitle": "École Supérieure d’Art d’Épinal",
-			"description": "",
+			"description": "École dite « de l’image » dans la grande tradition spinalienne. Image narrative, graphisme. Les bases avec en plus, et en autonomie, une pratique et un apprentissage des technologies web, flash en premier lieu. DNAT obtenu avec les félicitations. ",
 			"from": "2004-09",
 			"to": "2007-10",
 			
@@ -184,15 +166,13 @@
 			"slug": "beaune",
 			"title": "Prépa Beaune",
 			"subtitle": "École Préparatoire aux Écoles d'Arts de Beaune",
-			"description": "",
+			"description": "Un an de préparation aux écoles d’arts, après le bac, c’est bien. Surtout quand on vient de la fameuse fillière scientifique.",
 			"from": "2003-09",
 			"to": "2004-07",
-			
 			"dx": 0,
 			"dy": -4,
 			"direction": -1,
 			"boxIcon": "star",
-
 			"color": "#99d"
 		}
 	],

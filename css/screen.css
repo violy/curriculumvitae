@@ -9003,13 +9003,17 @@ button.close {
   color: #000;
   padding: 10px 18px 10px;
 }
-/* line 131, ../sass/_curriculum.scss */
+/* line 130, ../sass/_curriculum.scss */
+.dialog .description img, .dialog .description iframe {
+  display: inline-block;
+}
+/* line 134, ../sass/_curriculum.scss */
 .dialog .description a, .dialog .description a:link, .dialog .description a:visited {
   text-decoration: none;
   color: inherit;
   font-weight: 700;
 }
-/* line 141, ../sass/_curriculum.scss */
+/* line 144, ../sass/_curriculum.scss */
 .dialog .icon-cv {
   float: right;
   margin: 0 -10px;
