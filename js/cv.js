@@ -25,7 +25,7 @@ jQuery(document).ready(function($){
 
 
 	function DisplayDialog(item){
-		var handler = $(_.template('<div class="dialog-handler"><div class="dialog" style="background: <%= color %>"><h2><%= title %><i class="icon-cv icon-<%= boxIcon %>"></i></h2><h3><%= subtitle %></h3><div class="description" style="color:<%= color %>;"><%= subtitle+" "+title %></div></div></div>')(item));
+		var handler = $(_.template('<div class="dialog-handler"><div class="dialog <%= slug %>" style="background: <%= color %>"><h2><%= title %><i class="icon-cv icon-<%= boxIcon %>"></i></h2><h3><%= subtitle %></h3><div class="description" style="color:<%= darkenColor %>; border-color:<%= darkenColor %>;"><%= description %></div></div></div>')(item));
 		var dialog = handler.find('.dialog');
 		handler.click(function(){
 			handler.addClass('fadeout');
@@ -40,7 +40,9 @@ jQuery(document).ready(function($){
 	}
 
 	function ApplyDefaults(obj,defaults){
+		var ignore = /(el)|(path)/
 		_(defaults).each(function(val,key){
+			if(key.match(ignore)){console.log(key);return}
 			if(!obj[key]){
 				obj[key]=val;
 			}
@@ -52,7 +54,6 @@ jQuery(document).ready(function($){
 			dy: json.icons[name].dy,
 			code: String.fromCharCode(parseInt(json.icons[name].code, 16))
 		}
-		console.log(name,o);
 		return o;
 	}
 
@@ -177,6 +178,11 @@ jQuery(document).ready(function($){
 
 		_(data.curriculum).each(function(item,i){
 
+			if (item.alias) {
+				ApplyDefaults(item, _(data.curriculum).findWhere({slug: item.alias}))
+				item.tx = item.ty = null;
+				item.slug += "-alias";
+			}
 			ApplyDefaults(item,{
 				fromDate : new Date(item.from),
 				toDate : new Date(item.to),
@@ -184,11 +190,13 @@ jQuery(document).ready(function($){
 				ty : item.dy * 5,
 				fontSize : 20
 			})
+			console.log(item.slug, item.tx, item.ty, item);
 			item.toNow = Math.max(0, Date.now() - item.toDate.getTime());
 			item.toNowDay = Math.floor(item.toNow / DAY_IN_MS);
 			item.duration = Math.max(0, item.toDate.getTime() - item.fromDate.getTime());
 			item.durationDay = Math.floor(item.duration / DAY_IN_MS);
 			item.durationPx = (Math.max(20, item.durationDay)) * DAYPX;
+			item.darkenColor = tinycolor(item.color).darken(30).toString();
 
 
 			if(item.icon){

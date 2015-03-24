@@ -8997,10 +8997,19 @@ button.close {
 }
 /* line 124, ../sass/_curriculum.scss */
 .dialog .description {
+  border: solid 2px rgba(0, 0, 0, 0.1);
   border-top: none;
   background: rgba(255, 255, 255, 0.8);
+  color: #000;
+  padding: 10px 18px 10px;
 }
-/* line 128, ../sass/_curriculum.scss */
+/* line 131, ../sass/_curriculum.scss */
+.dialog .description a, .dialog .description a:link, .dialog .description a:visited {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 700;
+}
+/* line 141, ../sass/_curriculum.scss */
 .dialog .icon-cv {
   float: right;
   margin: 0 -10px;
