@@ -52,6 +52,7 @@ jQuery(document).ready(function($){
 	function Icon(name){
 		var o = {
 			dy: json.icons[name].dy,
+			dx: json.icons[name].dx,
 			code: String.fromCharCode(parseInt(json.icons[name].code, 16))
 		}
 		return o;
@@ -204,7 +205,7 @@ jQuery(document).ready(function($){
 					text = snap.text(0, 0, icon.code),
 					group = snap.g(circle,text);
 				circle.attr({fill:'transparent',stroke:item.color,'stroke-opacity':.5,'stroke-width':2})
-				text.attr({textpath:"M0 "+(7.5+icon.dy)+" L15 "+(7.5+icon.dy)})
+				text.attr({textpath:"M"+(icon.dx)+" "+(7.5+icon.dy)+" L"+(icon.dx+10)+" "+(7.5+icon.dy)})
 				text.attr({fill:item.color,'fill-opacity':.8,'font-size':item.fontSize,'font-family':'cv','text-anchor':'middle','alignment-baseline':'central'})
 				item.el = group.attr({class: 'icon'});
 			}else{

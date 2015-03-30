@@ -39,11 +39,22 @@ module.exports = function (grunt) {
 			bower: {
 				options: {
 					sourceMap: true,
-					sourceMapName: 'js/bower.min.js.map'
+					sourceMapName: 'js/cv.min.js.map'
 				},
 				files: {
-					'js/bower.min.js': ['js/bower.js']
+					'js/cv.min.js': ['js/bower.js', 'js/cv.js']
 				}
+			}
+		},
+		cssmin: {
+			target: {
+				files: [{
+					expand: true,
+					cwd: 'css',
+					src: ['*.css', '!*.min.css'],
+					dest: 'css',
+					ext: '.min.css'
+				}]
 			}
 		}
 	});
@@ -51,6 +62,7 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-bower-concat');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
 
 	grunt.registerTask('default', ['bower_concat','uglify']);
 

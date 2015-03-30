@@ -8993,7 +8993,7 @@ button.close {
 .dialog h3 {
   border-top: none;
   background: rgba(0, 0, 0, 0.1);
-  font-size: 12px;
+  font-size: 16px;
 }
 /* line 124, ../sass/_curriculum.scss */
 .dialog .description {
@@ -9015,6 +9015,10 @@ button.close {
   font-weight: 700;
 }
 /* line 146, ../sass/_curriculum.scss */
+.dialog em {
+  font-style: italic;
+}
+/* line 149, ../sass/_curriculum.scss */
 .dialog .icon-cv {
   float: right;
   margin: 0 -10px;
