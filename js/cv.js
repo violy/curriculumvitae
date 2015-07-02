@@ -238,7 +238,7 @@ jQuery(document).ready(function($){
 			var dateWrapperBg = snap.path(DATE_WRAPPER_BG_PATH),
 				dateWrapperShape = snap.path(DATE_WRAPPER_SHAPE_PATH),
 				dateText = snap.text(year.direction*61, 7.5, [year.value]),
-				dateWrapper = snap.group(dateWrapperBg, dateWrapperShape).addClass("dateWrapper"),
+				dateWrapp   er = snap.group(dateWrapperBg, dateWrapperShape).addClass("dateWrapper"),
 				dateWrapperGroup = snap.group(dateWrapper, dateText).addClass('dateWrapperGroup '+(year.direction > 0 ? "left" : "right")),
 				dateGroup = snap.group(dateWrapperGroup).addClass('dateGroup');
 
