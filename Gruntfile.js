@@ -8,8 +8,8 @@ module.exports = function (grunt) {
 				dest: 'js/bower.js',
 				dependencies: {
 					'bootstrap-sass': 'jquery',
-					'jquery.svg': ['jquery'],
-					'jquery-mousewheel': ['jquery'],
+					//'jquery.svg': ['jquery'],
+					//'jquery-mousewheel': ['jquery'],
 					'jquery.finger': ['jquery'],
 					'underscore': ['jquery']
 				}
