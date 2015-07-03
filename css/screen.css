@@ -2452,7 +2452,7 @@ pre code {
 }
 
 /* line 11, ../sass/bootstrap/mixins/_grid-framework.scss */
-.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .main .group, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, header h1 div, .col-sm-6, header h1 div, .main .group, .col-md-6, header h1 div, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .main .group, .main .group.panpan, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, header h1 div, .col-sm-6, header h1 div, .main .group, .col-md-6, header h1 div, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .main .contact, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
@@ -2982,7 +2982,7 @@ pre code {
 }
 @media (min-width: 992px) {
   /* line 27, ../sass/bootstrap/mixins/_grid-framework.scss */
-  .col-md-1, .col-md-2, .col-md-3, .col-md-4, .main .group, .col-md-5, .col-md-6, header h1 div, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+  .col-md-1, .col-md-2, .col-md-3, .col-md-4, .main .group, .main .group.panpan, .col-md-5, .col-md-6, header h1 div, .col-md-7, .col-md-8, .main .contact, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
     float: left;
   }
 
@@ -3002,7 +3002,7 @@ pre code {
   }
 
   /* line 35, ../sass/bootstrap/mixins/_grid-framework.scss */
-  .col-md-4, .main .group {
+  .col-md-4, .main .group, .main .group.panpan {
     width: 33.33333%;
   }
 
@@ -3022,7 +3022,7 @@ pre code {
   }
 
   /* line 35, ../sass/bootstrap/mixins/_grid-framework.scss */
-  .col-md-8 {
+  .col-md-8, .main .contact {
     width: 66.66667%;
   }
 
@@ -11970,7 +11970,11 @@ header h2 > div > div {
   padding: 0 15px;
 }
 
-/* line 47, ../sass/_main.scss */
+/* line 45, ../sass/_main.scss */
+.main {
+  padding-bottom: 40px;
+}
+/* line 48, ../sass/_main.scss */
 .main .super-group {
   margin: 0 0 40px;
 }
@@ -11983,21 +11987,21 @@ header h2 > div > div {
 .main .super-group:after {
   clear: both;
 }
-/* line 51, ../sass/_main.scss */
+/* line 52, ../sass/_main.scss */
 .main .group {
   margin: 0 0 40px;
 }
-/* line 56, ../sass/_main.scss */
+/* line 57, ../sass/_main.scss */
 .main, .main h3, .main h4, .main p {
   font-size: 16px;
   line-height: 20px;
   margin: 0;
 }
-/* line 61, ../sass/_main.scss */
+/* line 62, ../sass/_main.scss */
 .main h4 {
   font-weight: 500;
 }
-/* line 64, ../sass/_main.scss */
+/* line 65, ../sass/_main.scss */
 .main h3 {
   font-weight: 700;
   padding: 0 0 20px;
@@ -12008,54 +12012,78 @@ header h2 > div > div {
   -o-animation: wave 2s infinite linear;
   animation: wave 2s infinite linear;
 }
-/* line 72, ../sass/_main.scss */
+/* line 73, ../sass/_main.scss */
 .main p {
   font-weight: 300;
 }
-/* line 75, ../sass/_main.scss */
+/* line 76, ../sass/_main.scss */
 .main li {
   margin: 0 0 20px;
 }
-/* line 78, ../sass/_main.scss */
+/* line 79, ../sass/_main.scss */
 .main a {
   -moz-transition: all 1s;
   -o-transition: all 1s;
   -webkit-transition: all 1s;
   transition: all 1s;
 }
-/* line 80, ../sass/_main.scss */
+/* line 81, ../sass/_main.scss */
 .main a:hover {
   text-decoration: none;
 }
+/* line 85, ../sass/_main.scss */
+.main .group.panpan {
+  background: url(../images/panpan.svg) no-repeat center;
+  background-size: 60px;
+  height: 200px;
+}
 
 @media screen and (max-width: 767px) {
-  /* line 89, ../sass/_main.scss */
+  /* line 99, ../sass/_main.scss */
   body > .container {
     padding-left: 0;
     padding-right: 0;
   }
 
-  /* line 98, ../sass/_main.scss */
+  /* line 108, ../sass/_main.scss */
   header h1 div {
     font-size: 24px;
     width: 100%;
     text-align: left !important;
   }
-  /* line 103, ../sass/_main.scss */
+  /* line 113, ../sass/_main.scss */
   header h1 div:first-child {
     font-weight: 300;
   }
-  /* line 107, ../sass/_main.scss */
+  /* line 117, ../sass/_main.scss */
   header h2 {
     font-size: 16px;
   }
-  /* line 109, ../sass/_main.scss */
+  /* line 119, ../sass/_main.scss */
   header h2 > div {
     float: left;
     padding: 0 0 0 15px;
   }
-  /* line 112, ../sass/_main.scss */
+  /* line 122, ../sass/_main.scss */
   header h2 > div > div {
     padding: 0 5px 0 0;
+  }
+
+  /* line 128, ../sass/_main.scss */
+  .main {
+    padding-bottom: 50vh;
+  }
+  /* line 130, ../sass/_main.scss */
+  .main .super-group,
+  .main .group {
+    margin: 0;
+  }
+  /* line 134, ../sass/_main.scss */
+  .main h3 {
+    margin: 60px 0 20px 0;
+  }
+  /* line 138, ../sass/_main.scss */
+  .main .contact h3 {
+    margin-top: 0;
   }
 }

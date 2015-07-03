@@ -44,6 +44,7 @@ header{
 
 .main{
   @extend .container-fluid;
+  padding-bottom:40px;
   .super-group{
     margin: 0 0 40px;
     @include clearfix;
@@ -81,6 +82,15 @@ header{
       text-decoration:none;
     }
   }
+  .group.panpan{
+    @extend .col-md-4;
+    background: url(../images/panpan.svg) no-repeat center;
+    background-size: 60px;
+    height:200px;
+  }
+  .contact{
+    @extend .col-md-8;
+  }
 
 }
 
@@ -112,6 +122,21 @@ header{
         > div{
           padding: 0 5px 0 0;
         }
+      }
+    }
+  }
+  .main{
+    padding-bottom: 50vh;
+    .super-group,
+    .group{
+      margin: 0;
+    }
+    h3{
+      margin: 60px 0 20px 0;
+    }
+    .contact{
+      h3{
+        margin-top:0;
       }
     }
   }
