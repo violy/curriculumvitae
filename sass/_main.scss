@@ -103,6 +103,9 @@ header{
   }
   header{
     h1,h2{
+      span{
+        display: block;
+      }
     }
     h1{
       div{
@@ -140,4 +143,9 @@ header{
       }
     }
   }
+}
+
+::selection{
+  background: $brand-primary;
+  color: white;
 }

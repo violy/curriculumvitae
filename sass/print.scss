@@ -3,11 +3,9 @@
  * <link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" /> */
 
 @import "variables";
-@import "compass/reset";
-@import "compass/css3/animation";
-@import "bootstrap";
-@import "fonts";
-@import "font-awesome/font-awesome";
-@import "curriculum";
-@import "main";
-@import "header";
+// Core variables and mixins
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+
+// Reset and dependencies
+@import "bootstrap/print";
