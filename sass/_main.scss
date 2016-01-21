@@ -18,8 +18,14 @@ header{
     padding-top: 0;
     padding-bottom: 0;
     margin: 0;
+    span{
+      display: block;
+      float: left;
+      margin:0 10px 0 0;
+    }
   }
   h1{
+
     div{
       @extend .col-md-6;
       @extend .col-sm-6;
@@ -45,6 +51,8 @@ header{
 .main{
   @extend .container-fluid;
   padding-bottom:40px;
+  padding-right: 0;
+  padding-left: 0;
   .super-group{
     margin: 0 0 40px;
     @include clearfix;

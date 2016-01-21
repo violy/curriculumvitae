@@ -1,26 +1,25 @@
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="373.3px"
-	 height="483.75px" viewBox="0 0 373.3 483.75" enable-background="new 0 0 373.3 483.75" xml:space="preserve">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="373.3px" height="483.75px">
 <symbol  id="joue" viewBox="-43 -43 86 86">
-		<circle r="43" fill="#fff"></circle>
+		<circle r="43" fill="#fff" />
 </symbol>
 <symbol  id="oreilleSymbol" viewBox="-67.15 -92.875 134.35 185.775">
-	<path fill-rule="evenodd" clip-rule="evenodd" fill="#FF0000" d="M67.2,69.5L-21.425-61.6c-7.842-2.312-15.142-5.712-21.9-10.2
+	<path fill="#FF0000" d="M67.2,69.5L-21.425-61.6c-7.842-2.312-15.142-5.712-21.9-10.2
 		l-7.05-21.075c-2.651,2.604-4.993,5.712-7.025,9.325c-3.544,6.272-6.161,14.063-7.85,23.375c-4.05,22.208-1.625,46.591,7.275,73.15
 		c8.902,26.564,21.669,47.515,38.3,62.85C-8.729,85.905,1.78,91.597,11.85,92.9l-19.4-57.95C3.927,47.128,16.543,56.411,30.3,62.8
 		C44.122,69.197,56.422,71.431,67.2,69.5z"/>
 </symbol>
 <symbol  id="patteSymbol" viewBox="-34.011 -35.749 182.751 60.433">
-	<path fill-rule="evenodd" clip-rule="evenodd" fill="#FF0000" d="M30.925,23.425c9.246-0.869,16.812-1.911,22.7-3.125
+	<path fill="#FF0000" d="M30.925,23.425c9.246-0.869,16.812-1.911,22.7-3.125
 		c15.016-3.116,24.983-5.316,29.9-6.6C99.709,9.442,114.267,4.208,127.2-2c10.357-4.992,17.058-10.517,20.1-16.575
 		c3.038-6.066,1.271-10.474-5.3-13.225c-11.854-4.917-31.912-5.242-60.175-0.975c-16.187,2.458-31.878,5.666-47.075,9.625
 		C24.326-20.444,12.01-16.76-2.2-12.1c-9.351,3.062-16.467,6.387-21.35,9.975c-5.397,3.966-8.838,8.766-10.325,14.4
 		c-0.727,2.729,1.457,5.371,6.55,7.925c4.54,2.307,9.131,3.607,13.775,3.9C0.779,25.062,15.604,24.837,30.925,23.425z"/>
 </symbol>
 <symbol  id="queueSymbol" viewBox="-48 -48 96 96">
-	<circle r="48" cy="0" cx="0" fill="#f00"></circle>
+	<circle r="48" cy="0" cx="0" fill="#f00" />
 </symbol>
 <symbol  id="teteSymbol" viewBox="-94.804 -141.168 189.585 132.169">
-	<path fill-rule="evenodd" clip-rule="evenodd" fill="#FF0000" d="M27.25-13.25c20.033-4.833,37.067-14.617,51.1-29.35
+	<path fill="#FF0000" d="M27.25-13.25c20.033-4.833,37.067-14.617,51.1-29.35
 		c14.9-15.667,19.667-34.017,14.3-55.05c-5.066-19.833-18.6-32.383-40.6-37.65c-6.767-1.617-13.566-2.9-20.4-3.85
 		c-11.499-1.593-23.099-2.243-34.8-1.95c-20.7,0.934-40.35,5.583-58.95,13.95c-5.106,2.271-9.615,4.955-13.525,8.05
 		c-11.128,8.837-17.42,21.037-18.875,36.6c-1.633,17.367,3.317,32.65,14.85,45.85l1.3,1.35c2,2.033,4.95,4.6,8.85,7.7l5.225,4.05
@@ -31,45 +30,27 @@
 		<use xlink:href="#joue"  width="85.8" height="85.8" x="-42.925" y="-42.9" transform="matrix(1 0 0 1 -21.3501 -90.6001)" overflow="visible"/>
 </symbol>
 <symbol  id="ventreSymbol" viewBox="-122.501 -104.182 241.361 209.988">
-	<path fill-rule="evenodd" clip-rule="evenodd" fill="#FF0000" d="M62.45,84.4C79.683,73.467,93.5,59.167,103.9,41.5
+	<path fill="#FF0000" d="M62.45,84.4C79.683,73.467,93.5,59.167,103.9,41.5
 		c9.733-16.467,14.717-32.917,14.95-49.35c0.167-10.566-1.6-21.083-5.3-31.55c-9.533-26.833-29.017-45.733-58.45-56.7
 		c-5.033-1.867-10.184-3.433-15.45-4.7c-24.733-5.867-50.316-4.1-76.75,5.3c-32.033,11.333-56.033,30.55-72,57.65
 		c-4.267,7.267-7.617,14.483-10.05,21.65c-2.2,7.367-3.317,17.05-3.35,29.05c-0.033,12.6,1.233,22.65,3.8,30.15
 		c9.067,26.7,28.534,45.617,58.4,56.75c7.333,2.667,12.5,4.233,15.5,4.7c6.4,0.966,12.5,1.417,18.3,1.35
 		c4.433-0.033,11.45-0.466,21.05-1.3c8.967-0.767,14.934-1.467,17.9-2.1c1.433-0.3,7.583-2.033,18.45-5.2
 		c6-1.767,11.483-3.75,16.45-5.95C50.317,89.917,55.35,87.633,62.45,84.4z"/>
-		<circle r="56" cx="37.5" cy="-29" fill="#fff"></circle>
+		<circle r="56" cx="37.5" cy="-29" fill="#fff" />
 
 </symbol>
 <symbol  id="yeux" viewBox="0 -20 26 20">
-	<circle fill="#000" r="9" cx="9" cy="-10"></circle>
-	<circle fill="#000" r="7" cx="19" cy="-7"></circle>
+	<circle fill="#000" r="9" cx="9" cy="-10" />
+	<circle fill="#000" r="7" cx="19" cy="-7" />
 </symbol>
 <g id="rabbit" transform="scale(1,-1)">
-	<g id="pattear">
-
-			<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#patteSymbol" width="183" height="60" x="190" y="-449" overflow="visible"></use>
-	</g>
-	<g id="corps">
-
-			<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ventreSymbol" width="241" height="210" x="82" y="-468" overflow="visible"></use>
-	</g>
-	<g id="queue">
-
-			<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#queueSymbol" width="97" height="94" x="0" y="-399" overflow="visible"></use>
-	</g>
-	<g id="oreille">
-
-			<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#oreilleSymbol" width="135" height="186" x="147" y="-186" overflow="visible"></use>
-	</g>
-	<g id="tete">
-
-			<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#teteSymbol" width="190" height="132" x="141" y="-282" overflow="visible"></use>
-	</g>
-	<g id="patteav">
-
-			<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#patteSymbol" width="183" height="60" x="113" y="-483" overflow="visible"></use>
-	</g>
+	<use id="pattear" xlink:href="#patteSymbol" width="183" height="60" x="190" y="-449" overflow="visible"></use>
+	<use id="corps" xlink:href="#ventreSymbol" width="241" height="210" x="82" y="-468" overflow="visible"></use>
+	<use id="queue" xlink:href="#queueSymbol" width="97" height="94" x="0" y="-399" overflow="visible"></use>
+	<use id="oreille" xlink:href="#oreilleSymbol" width="135" height="186" x="147" y="-186" overflow="visible"></use>
+	<use id="tete" xlink:href="#teteSymbol" width="190" height="132" x="141" y="-282" overflow="visible"></use>
+	<use id="patteav" xlink:href="#patteSymbol" width="183" height="60" x="113" y="-483" overflow="visible"></use>
 </g>
 
 </svg>
