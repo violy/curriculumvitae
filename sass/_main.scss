@@ -84,6 +84,9 @@ header{
   li{
     margin: 0 0 20px;
   }
+  em{
+    opacity: .6;
+  }
   a{
     @include transition;
     &:hover{

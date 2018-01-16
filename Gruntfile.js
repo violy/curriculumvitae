@@ -12,7 +12,10 @@ module.exports = function (grunt) {
 					//'jquery-mousewheel': ['jquery'],
 					'jquery.finger': ['jquery'],
 					'underscore': ['jquery']
-				}
+				},
+				exclude:[
+					'font-awesome'
+				]
 			}
 		},
 		copy:{
@@ -64,6 +67,6 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 
-	grunt.registerTask('default', ['bower_concat','uglify']);
+	grunt.registerTask('default', ['cssmin','bower_concat','uglify']);
 
 };
