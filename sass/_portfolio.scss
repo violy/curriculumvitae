@@ -1,0 +1,58 @@
+.portfolio{
+
+  .table{
+    font-size:1.4rem;
+  }
+
+  th,td{
+    &.date{
+      width:7em;
+      //padding-left: 0;
+    }
+    &.project{
+      width:15em;
+      min-width: 15em;
+    }
+    &.technologies{
+      cursor: default;
+      width:20em;
+      min-width: 20em;
+    }
+    &.focus{
+      cursor: default;
+      width:20em;
+      min-width: 20em;
+    }
+  }
+
+  .ref-link{
+    display: block;
+    span:first-child{
+      display: none;
+    }
+  }
+
+  code{
+    font-family: inherit;
+    color:$brand-primary;
+    background-color:transparentize($brand-primary,.9);
+    @include transition(.3s);
+    &:hover{
+      background-color: transparent;
+      color:$gray-base;
+    }
+  }
+
+  @media screen and (max-width: $screen-sm-max) {
+    .table {
+      font-size:1.2rem;
+    }
+  }
+
+  @media screen and (max-width: $screen-xs-max) {
+    .table {
+      font-size:1.2rem;
+    }
+  }
+
+}
