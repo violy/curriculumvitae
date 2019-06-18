@@ -21,7 +21,7 @@
   "dependencies": {
     "jquery": "~2.1.3",
     "bootstrap-sass": "~3.3.3",
-    "underscore": "~1.8.2",
+    "underscore": "~3.x",
     "jquery-mousewheel": "~3.1.12",
     "jquery.finger": "~0.1.2",
     "Snap.svg": "~0.3.0",
