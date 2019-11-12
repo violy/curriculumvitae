@@ -3,21 +3,6 @@ module.exports = function (grunt) {
 	grunt.initConfig({
 
 		bower: grunt.file.readJSON('.bowerrc'),
-		bower_concat: {
-			all: {
-				dest: 'js/bower.js',
-				dependencies: {
-					'bootstrap-sass': 'jquery',
-					//'jquery.svg': ['jquery'],
-					//'jquery-mousewheel': ['jquery'],
-					'jquery.finger': ['jquery'],
-					'underscore': ['jquery']
-				},
-				exclude:[
-					'font-awesome'
-				]
-			}
-		},
 		copy:{
 			dist:{
 				files:[{
@@ -38,17 +23,6 @@ module.exports = function (grunt) {
 				}]
 			}
 		},
-		uglify: {
-			bower: {
-				options: {
-					sourceMap: true,
-					sourceMapName: 'js/cv.min.js.map'
-				},
-				files: {
-					'js/cv.min.js': ['js/bower.js', 'js/cv.js']
-				}
-			}
-		},
 		cssmin: {
 			target: {
 				files: [{
@@ -62,11 +36,11 @@ module.exports = function (grunt) {
 		}
 	});
 
-	grunt.loadNpmTasks('grunt-bower-concat');
+	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-copy');
-	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 
-	grunt.registerTask('default', ['cssmin','bower_concat','uglify']);
+	grunt.registerTask('install', ['copy']);
+	grunt.registerTask('default', ['cssmin']);
 
 };
