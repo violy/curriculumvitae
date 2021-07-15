@@ -10,11 +10,19 @@
   }
 }
 
+html,body{
+  font-size:16px;
+}
+
+.me{
+  color:$brand-primary;
+}
+
 header{
   padding: 40px 0;
   h1,h2{
     @extend .container-fluid;
-    font-size:32px;
+    font-size:2rem;
     padding-top: 0;
     padding-bottom: 0;
     margin: 0;
@@ -63,8 +71,8 @@ header{
     margin: 0 0 40px;
   }
   &,h3,h4,p{
-    font-size: 16px;
-    line-height: 20px;
+    font-size: 1rem;
+    line-height: 1.25em;
     margin: 0;
   }
   h4{
