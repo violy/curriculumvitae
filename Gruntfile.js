@@ -67,6 +67,6 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 
-	grunt.registerTask('default', ['cssmin','bower_concat','uglify']);
+	grunt.registerTask('default', ['cssmin','uglify']);
 
 };
