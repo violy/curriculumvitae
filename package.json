@@ -1,5 +1,5 @@
 {
-  "name": "arthurviolycv2",
+  "name": "cv2",
   "version": "0.0.0",
   "description": "curriculum vitae Arthur Violy",
   "main": "Gruntfile.js",
@@ -11,22 +11,21 @@
     "url": "https://github.com/violy/curriculumvitae.git"
   },
   "keywords": [
-    "CV",
-    "Curriculum vitæ",
-    "HTML",
-    "CSS"
+    "CV"
   ],
   "author": "Arthur Violy",
-  "license": "LAL-1.2",
+  "license": "Artistic Licence 2.0",
   "bugs": {
     "url": "https://github.com/violy/curriculumvitae/issues"
   },
   "homepage": "https://github.com/violy/curriculumvitae",
   "devDependencies": {
-    "grunt": "^1.0.4",
-    "grunt-contrib-concat": "^1.0.1",
-    "grunt-contrib-copy": "^1.0.0",
+    "bower": "^1.8.12",
+    "grunt": "^1.4.1",
+    "grunt-bower-concat": "^0.1.1",
+    "grunt-contrib-copy": "^0.8.0",
     "grunt-contrib-cssmin": "^3.0.0",
-    "load-grunt-tasks": "^5.1.0"
+    "grunt-contrib-uglify": "^4.0.1",
+    "load-grunt-tasks": "^3.1.0"
   }
 }

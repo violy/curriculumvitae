@@ -8,4 +8,60 @@
 @import "bootstrap/mixins";
 
 // Reset and dependencies
-@import "bootstrap/print";
+//@import "bootstrap/print";
+
+html,body{
+  -webkit-print-color-adjust: exact;
+  font-size: 8pt;
+  width:100%;
+  margin: 0;
+  padding: 0;
+}
+header{
+  padding: 2rem 0;
+}
+.container{
+  width:auto;
+}
+.main{
+  width:280mm;
+  padding: 0;
+  .group{
+    margin: 0 0 1rem;
+    &.contact{
+      margin: 1rem 0 0;
+      //
+    }
+    &.panpan{
+      height:12.5rem;
+    }
+  }
+  .super-group{
+    margin: 0;
+  }
+  h3{
+    padding: 0 0 1rem;
+    margin: 0 0 1rem;
+    background-size: auto 50%;
+  }
+  li{
+    margin: 0 0 1rem;
+  }
+}
+.link-portfolio{
+  display: none;
+}
+.col-sm-6, .main .group, header h1 div{
+  width: 33%;
+}
+@page {
+  size: A4 landscape;
+  width: 297mm;
+  height: 210mm;
+  margin: 0;
+  padding: 0;
+}
+
+a{
+  text-decoration: none;
+}
